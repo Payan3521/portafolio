@@ -1,0 +1,71 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import Icon from './Icon.astro';
+import { experience } from '../data/experience';
+import { t } from '../i18n/utils';
+import { useTranslations } from '../i18n/ui';
+import type { Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const tr = useTranslations(lang);
+---
+
+<section id="experience" class="section">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionHeading title={tr('experience.title')} subtitle={tr('experience.subtitle')} eyebrow="03" />
+
+    <ol class="relative mx-auto mt-14 max-w-3xl">
+      <span class="timeline-line absolute bottom-2 left-[0.4rem] top-3 w-px" aria-hidden="true"></span>
+
+      {
+        experience.map((job, i) => (
+          <li class="relative pb-9 pl-10 last:pb-0" data-reveal style={`--reveal-delay:${i * 80}ms`}>
+            <span class="dot absolute left-0 top-[1.4rem]" aria-hidden="true"></span>
+
+            <div class="card p-6">
+              <div class="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <h3 class="text-lg font-semibold text-text">{t(lang, job.role)}</h3>
+                  <p class="mt-1 text-sm font-medium text-accent-2">{job.company}</p>
+                </div>
+                <span class="chip shrink-0">
+                  <Icon name="briefcase" size={13} />
+                  {job.start} — {job.end ?? tr('experience.present')}
+                </span>
+              </div>
+
+              <p class="mt-3 text-sm text-muted">
+                <span class="inline-flex items-center gap-1.5">
+                  <Icon name="map-pin" size={13} class="text-muted" />
+                  {t(lang, job.location)}
+                </span>
+              </p>
+
+              <p class="mt-4 text-sm leading-relaxed text-muted">{t(lang, job.description)}</p>
+
+              <ul class="mt-4 space-y-2">
+                {job.achievements.map((item) => (
+                  <li class="flex gap-2.5 text-sm leading-relaxed text-muted">
+                    <span class="mt-1 text-accent-2">
+                      <Icon name="check" size={15} />
+                    </span>
+                    {t(lang, item)}
+                  </li>
+                ))}
+              </ul>
+
+              <ul class="mt-5 flex flex-wrap gap-2">
+                {job.tech.map((tech) => (
+                  <li class="chip">{tech}</li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

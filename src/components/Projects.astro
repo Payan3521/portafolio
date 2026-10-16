@@ -1,0 +1,23 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import ProjectCard from './ProjectCard.astro';
+import { projects } from '../data/projects';
+import { useTranslations } from '../i18n/ui';
+import type { Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const tr = useTranslations(lang);
+---
+
+<section id="projects" class="section">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionHeading title={tr('projects.title')} subtitle={tr('projects.subtitle')} eyebrow="05" />
+
+    <div class="mt-14 grid gap-6 md:grid-cols-2">
+      {projects.map((project, i) => <ProjectCard project={project} lang={lang} delay={i * 80} />)}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+---
+// Página raíz: redirige al idioma preferido del visitante.
+// Se usa un pequeño script para detectar el idioma del navegador,
+// con respaldo en español (idioma por defecto).
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Juan Pablo Bedoya Payán — Portafolio</title>
+    <link rel="canonical" href="/es/" />
+    <meta http-equiv="refresh" content="0; url=/es/" />
+    <link rel="alternate" hreflang="es" href="/es/" />
+    <link rel="alternate" hreflang="en" href="/en/" />
+    <link rel="alternate" hreflang="x-default" href="/es/" />
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #080810;
+        color: #99a2bd;
+        font-family: system-ui, sans-serif;
+      }
+      a { color: #22d3ee; }
+    </style>
+  </head>
+  <body>
+    <p>
+      Redirigiendo… <a href="/es/">Español</a> · <a href="/en/">English</a>
+    </p>
+    <script is:inline>
+      (function () {
+        var lang = (navigator.language || 'es').toLowerCase();
+        var target = lang.indexOf('en') === 0 ? '/en/' : '/es/';
+        window.location.replace(target);
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import Icon from './Icon.astro';
+import { skillGroups } from '../data/skills';
+import { useTranslations } from '../i18n/ui';
+import type { Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const tr = useTranslations(lang);
+---
+
+<section id="skills" class="section">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionHeading title={tr('skills.title')} subtitle={tr('skills.subtitle')} eyebrow="02" />
+
+    <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        skillGroups.map((group, i) => (
+          <div class="card p-6" data-reveal style={`--reveal-delay:${i * 70}ms`}>
+            <div class="flex items-center gap-3">
+              <span class="icon-badge">
+                <Icon name={group.icon} size={20} />
+              </span>
+              <h3 class="text-base font-semibold">{tr(group.titleKey)}</h3>
+            </div>
+            <ul class="mt-5 flex flex-wrap gap-2">
+              {group.items.map((item) => (
+                <li class="chip">{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
