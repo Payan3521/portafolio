@@ -1,0 +1,84 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import Icon from './Icon.astro';
+import { profile, facts, spokenLanguages } from '../data/profile';
+import { t } from '../i18n/utils';
+import { useTranslations } from '../i18n/ui';
+import type { Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const tr = useTranslations(lang);
+---
+
+<section id="about" class="section">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionHeading title={tr('about.title')} subtitle={tr('about.subtitle')} eyebrow="01" />
+
+    <div class="mt-14 grid gap-8 lg:grid-cols-[1.4fr_1fr]">
+      <!-- Bio -->
+      <div class="space-y-5 text-base leading-relaxed text-muted" data-reveal>
+        {
+          profile.bio.map((paragraph) => (
+            <p>{t(lang, paragraph)}</p>
+          ))
+        }
+
+        <div class="flex flex-wrap gap-3 pt-2">
+          <span class="chip">
+            <Icon name="map-pin" size={14} />
+            {t(lang, profile.location)}
+          </span>
+          <span class="chip">
+            <Icon name="globe" size={14} />
+            {t(lang, profile.availability)}
+          </span>
+        </div>
+      </div>
+
+      <!-- Datos rápidos -->
+      <div class="space-y-6" data-reveal style="--reveal-delay:120ms">
+        <div class="card p-6">
+          <h3 class="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-text">
+            <Icon name="sparkles" size={16} class="text-accent-2" />
+            {tr('about.quickFacts')}
+          </h3>
+          <ul class="mt-5 space-y-4">
+            {
+              facts.map((fact) => (
+                <li class="flex items-center gap-3">
+                  <span class="icon-badge h-10 w-10">
+                    <Icon name={fact.icon} size={18} />
+                  </span>
+                  <span class="flex flex-col">
+                    <span class="text-xs text-muted">{t(lang, fact.label)}</span>
+                    <span class="text-sm font-medium text-text">{t(lang, fact.value)}</span>
+                  </span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <div class="card p-6">
+          <h3 class="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-text">
+            <Icon name="globe" size={16} class="text-accent-2" />
+            {tr('about.languages')}
+          </h3>
+          <ul class="mt-5 space-y-3">
+            {
+              spokenLanguages.map((l) => (
+                <li class="flex items-center justify-between gap-3 text-sm">
+                  <span class="font-medium text-text">{t(lang, l.name)}</span>
+                  <span class="font-mono text-xs text-muted">{t(lang, l.level)}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,183 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { profile } from '../data/profile';
+import { useTranslations } from '../i18n/ui';
+import type { Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  description?: string;
+}
+
+const { lang, title, description } = Astro.props;
+const tr = useTranslations(lang);
+
+const pageTitle = title ?? tr('meta.title');
+const pageDescription = description ?? tr('meta.description');
+
+const base = profile.site.replace(/\/$/, '');
+const canonical = `${base}/${lang}/`;
+const ogImage = `${base}/og-image.png`;
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: profile.name,
+  jobTitle: lang === 'es' ? profile.role.es : profile.role.en,
+  email: `mailto:${profile.email}`,
+  url: base,
+  image: `${base}${profile.photo}`,
+  sameAs: [profile.social.github, profile.social.linkedin, profile.social.twitter].filter(Boolean),
+  knowsLanguage: lang === 'es' ? ['es', 'en'] : ['en', 'es'],
+};
+---
+
+<!doctype html>
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="es" href={`${base}/es/`} />
+    <link rel="alternate" hreflang="en" href={`${base}/en/`} />
+    <link rel="alternate" hreflang="x-default" href={`${base}/`} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <meta name="theme-color" content="#080810" />
+
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">
+      {lang === 'es' ? 'Saltar al contenido' : 'Skip to content'}
+    </a>
+
+    <div class="bg-fx" aria-hidden="true">
+      <div class="grid"></div>
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
+
+    <div id="scroll-progress" aria-hidden="true"></div>
+
+    <Navbar lang={lang} />
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <Footer lang={lang} />
+
+    <script>
+      // ── Reveal on scroll ─────────────────────────────
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const revealEls = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
+
+      if (prefersReduced) {
+        revealEls.forEach((el) => el.classList.add('is-visible'));
+      } else {
+        // Revela todo elemento cuyo borde superior ya entró en el viewport.
+        // Se basa en scroll (no IntersectionObserver) para no perder nada
+        // con saltos rápidos o enlaces ancla.
+        let ticking = false;
+        const reveal = () => {
+          const limit = window.innerHeight * 0.92;
+          for (const el of revealEls) {
+            if (el.classList.contains('is-visible')) continue;
+            if (el.getBoundingClientRect().top < limit) el.classList.add('is-visible');
+          }
+          ticking = false;
+        };
+        const requestReveal = () => {
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(reveal);
+          }
+        };
+        window.addEventListener('scroll', requestReveal, { passive: true });
+        window.addEventListener('resize', requestReveal);
+        window.addEventListener('load', requestReveal);
+        reveal();
+      }
+
+      // ── Barra de progreso de scroll ──────────────────
+      const progress = document.getElementById('scroll-progress');
+      const onScroll = () => {
+        const h = document.documentElement;
+        const max = h.scrollHeight - h.clientHeight;
+        const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+        if (progress) progress.style.width = pct + '%';
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // ── Sección activa en el navbar ──────────────────
+      const navLinks = document.querySelectorAll<HTMLAnchorElement>('[data-nav-link]');
+      const sections = document.querySelectorAll<HTMLElement>('section[id]');
+      if (sections.length) {
+        const navObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const id = entry.target.id;
+                navLinks.forEach((link) => {
+                  link.classList.toggle('is-active', link.getAttribute('href')?.endsWith('#' + id) ?? false);
+                });
+              }
+            });
+          },
+          { rootMargin: '-45% 0px -50% 0px' },
+        );
+        sections.forEach((s) => navObserver.observe(s));
+      }
+
+      // ── Header con fondo al hacer scroll ─────────────
+      const header = document.getElementById('site-header');
+      const onScrollHeader = () => {
+        if (!header) return;
+        header.classList.toggle('is-scrolled', window.scrollY > 20);
+      };
+      window.addEventListener('scroll', onScrollHeader, { passive: true });
+      onScrollHeader();
+    </script>
+  </body>
+</html>
