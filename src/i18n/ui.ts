@@ -3,9 +3,9 @@ import type { Lang } from './utils';
 export const ui = {
   es: {
     // Meta / SEO
-    'meta.title': 'Juan Pablo Bedoya Payán — Ingeniero de Software Full Stack',
+    'meta.title': 'Juan Pablo Bedoya Payán — Desarrollador Full Stack',
     'meta.description':
-      'Portafolio y hoja de vida de Juan Pablo Bedoya Payán, ingeniero de software full stack especializado en aplicaciones web rápidas, escalables y accesibles.',
+      'Portafolio y hoja de vida de Juan Pablo Bedoya Payán, estudiante de Ingeniería de Software y desarrollador Full Stack especializado en aplicaciones web y móviles rápidas, escalables y accesibles.',
 
     // Navegación
     'nav.about': 'Sobre mí',
@@ -40,8 +40,12 @@ export const ui = {
     'skills.group.languages': 'Lenguajes',
     'skills.group.frontend': 'Frontend',
     'skills.group.backend': 'Backend',
+    'skills.group.mobile': 'Desarrollo Móvil',
     'skills.group.databases': 'Bases de datos',
-    'skills.group.devops': 'DevOps & Cloud',
+    'skills.group.cloud': 'Cloud & AWS',
+    'skills.group.devops': 'DevOps & CI/CD',
+    'skills.group.security': 'Seguridad',
+    'skills.group.ai': 'IA & Automatización',
     'skills.group.tools': 'Herramientas',
 
     // Experiencia
@@ -87,9 +91,9 @@ export const ui = {
   },
   en: {
     // Meta / SEO
-    'meta.title': 'Juan Pablo Bedoya Payán — Full Stack Software Engineer',
+    'meta.title': 'Juan Pablo Bedoya Payán — Full Stack Developer',
     'meta.description':
-      'Portfolio and résumé of Juan Pablo Bedoya Payán, a full stack software engineer specialized in fast, scalable and accessible web applications.',
+      'Portfolio and résumé of Juan Pablo Bedoya Payán, Software Engineering student and Full Stack developer specialized in fast, scalable and accessible web and mobile applications.',
 
     // Navigation
     'nav.about': 'About',
@@ -124,8 +128,12 @@ export const ui = {
     'skills.group.languages': 'Languages',
     'skills.group.frontend': 'Frontend',
     'skills.group.backend': 'Backend',
+    'skills.group.mobile': 'Mobile Development',
     'skills.group.databases': 'Databases',
-    'skills.group.devops': 'DevOps & Cloud',
+    'skills.group.cloud': 'Cloud & AWS',
+    'skills.group.devops': 'DevOps & CI/CD',
+    'skills.group.security': 'Security',
+    'skills.group.ai': 'AI & Automation',
     'skills.group.tools': 'Tools',
 
     // Experience
