@@ -12,8 +12,8 @@ export const profile = {
   initials: 'JP',
 
   role: {
-    es: 'Ingeniero de Software Full Stack',
-    en: 'Full Stack Software Engineer',
+    es: 'Desarrollador Full Stack · Estudiante de Ingeniería de Software',
+    en: 'Full Stack Developer · Software Engineering Student',
   } satisfies Localized,
 
   tagline: {
@@ -24,12 +24,12 @@ export const profile = {
   /** Cada elemento es un párrafo. */
   bio: [
     {
-      es: 'Soy ingeniero de software con más de 5 años de experiencia diseñando y desarrollando productos digitales. Me muevo con comodidad entre el frontend y el backend, y disfruto convertir ideas complejas en interfaces simples y agradables.',
-      en: 'I am a software engineer with over 5 years of experience designing and building digital products. I move comfortably between frontend and backend, and I love turning complex ideas into simple and delightful interfaces.',
+      es: 'Soy estudiante de Ingeniería de Software en la Universidad EAM (Armenia, Quindío) y actualmente curso 6.º de 8 semestres. Me apasiona construir productos completos, desde la base de datos y la lógica del servidor hasta la interfaz y la experiencia de usuario.',
+      en: 'I am a Software Engineering student at Universidad EAM (Armenia, Quindío), currently in my 6th of 8 semesters. I love building complete products, from the database and server logic all the way to the interface and user experience.',
     },
     {
-      es: 'Me apasionan el código limpio, las buenas prácticas, el rendimiento y la accesibilidad. Trabajo bien en equipo, aprendo rápido y me tomo en serio cada detalle, desde la arquitectura hasta el último píxel.',
-      en: 'I am passionate about clean code, best practices, performance and accessibility. I work well in teams, learn fast and take every detail seriously, from architecture down to the last pixel.',
+      es: 'Me desempeño como desarrollador Full Stack: manejo backend, frontend y desarrollo móvil, además de cloud (AWS), DevOps, seguridad e integración de inteligencia artificial. Disfruto el código limpio, el rendimiento y aprender algo nuevo cada día.',
+      en: 'I work as a Full Stack developer: I handle backend, frontend and mobile development, plus cloud (AWS), DevOps, security and AI integration. I enjoy clean code, performance and learning something new every day.',
     },
   ] satisfies Localized[],
 
@@ -42,8 +42,6 @@ export const profile = {
     es: 'Disponible para trabajo remoto, presencial o híbrido',
     en: 'Open to remote, on-site or hybrid work',
   } satisfies Localized,
-
-  yearsExperience: 5,
 
   photo: '/images/profile.svg',
 
@@ -74,9 +72,9 @@ export const facts: Fact[] = [
     icon: 'map-pin',
   },
   {
-    label: { es: 'Experiencia', en: 'Experience' },
-    value: { es: '+5 años', en: '5+ years' },
-    icon: 'briefcase',
+    label: { es: 'Formación', en: 'Education' },
+    value: { es: '6.º de 8 semestres', en: '6th of 8 semesters' },
+    icon: 'graduation-cap',
   },
   {
     label: { es: 'Disponibilidad', en: 'Availability' },

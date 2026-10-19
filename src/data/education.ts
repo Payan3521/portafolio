@@ -17,13 +17,13 @@ export interface Certification {
 
 export const education: EducationItem[] = [
   {
-    institution: 'Universidad Nacional de Colombia',
-    degree: { es: 'Ingeniería de Sistemas', en: 'B.Sc. in Computer Science' },
-    start: '2015',
-    end: '2020',
+    institution: 'Universidad EAM',
+    degree: { es: 'Ingeniería de Software', en: 'Software Engineering' },
+    start: '2023',
+    end: null,
     description: {
-      es: 'Graduado con honores. Trabajo de grado sobre sistemas distribuidos y computación en la nube.',
-      en: 'Graduated with honors. Thesis on distributed systems and cloud computing.',
+      es: 'Actualmente cursando 6.º de 8 semestres. Formación en desarrollo de software, algoritmos, estructuras de datos, bases de datos, arquitectura y redes.',
+      en: 'Currently in the 6th of 8 semesters. Coursework in software development, algorithms, data structures, databases, architecture and networking.',
     },
   },
   {

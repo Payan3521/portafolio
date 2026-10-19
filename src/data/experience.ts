@@ -14,69 +14,29 @@ export interface ExperienceItem {
 
 export const experience: ExperienceItem[] = [
   {
-    company: 'TechNova Solutions',
-    role: { es: 'Ingeniero de Software Senior', en: 'Senior Software Engineer' },
-    start: '2023',
+    company: 'Universidad EAM — Laboratorio de Innovación',
+    role: { es: 'Desarrollador de Software', en: 'Software Developer' },
+    start: 'Mar 2026',
     end: null,
     location: { es: 'Remoto', en: 'Remote' },
     description: {
-      es: 'Lidero el desarrollo de la plataforma principal de la empresa, una aplicación SaaS usada por más de 50.000 usuarios.',
-      en: 'I lead development of the company’s core platform, a SaaS application used by more than 50,000 users.',
+      es: 'Desarrollo de software en el Laboratorio de Innovación de la Universidad EAM. Construyo productos propios de la universidad y soluciones para clientes externos vinculados a través del área de innovación, participando en el ciclo completo de cada proyecto: arquitectura, backend, frontend, despliegue y soporte.',
+      en: 'Software development at Universidad EAM’s Innovation Lab. I build the university’s own products and solutions for external clients engaged through the innovation area, taking part in the full lifecycle of each project: architecture, backend, frontend, deployment and support.',
     },
     achievements: [
       {
-        es: 'Reduje el tiempo de carga inicial en un 45% mediante code-splitting y optimización de consultas.',
-        en: 'Reduced initial load time by 45% through code-splitting and query optimization.',
+        es: 'Desarrollé de punta a punta varios proyectos de software, desde el diseño de la arquitectura y las APIs hasta la interfaz y el despliegue en producción.',
+        en: 'Built several software projects end to end, from architecture and API design through to the interface and production deployment.',
       },
       {
-        es: 'Mentoricé a 4 desarrolladores junior y establecí guías de revisión de código.',
-        en: 'Mentored 4 junior developers and established code review guidelines.',
+        es: 'Implementé Prospectiva 2050 (monorepo con backend NestJS, tres apps en React y PostgreSQL), desplegado en AWS EC2 con CI/CD a GHCR.',
+        en: 'Implemented Prospectiva 2050 (a monorepo with a NestJS backend, three React apps and PostgreSQL), deployed to AWS EC2 with CI/CD to GHCR.',
       },
       {
-        es: 'Diseñé la arquitectura de microservicios que hoy soporta 1M+ de peticiones diarias.',
-        en: 'Designed the microservices architecture now handling 1M+ daily requests.',
+        es: 'Colaboré en el desarrollo de la plataforma web institucional de la Universidad EAM (eam.edu.co).',
+        en: 'Contributed to the development of Universidad EAM’s institutional website (eam.edu.co).',
       },
     ],
-    tech: ['TypeScript', 'React', 'Node.js', 'PostgreSQL', 'AWS', 'Docker'],
-  },
-  {
-    company: 'DataFlow Labs',
-    role: { es: 'Desarrollador Full Stack', en: 'Full Stack Developer' },
-    start: '2021',
-    end: '2023',
-    location: { es: 'Híbrido — Medellín', en: 'Hybrid — Medellín' },
-    description: {
-      es: 'Desarrollé dashboards analíticos en tiempo real y APIs para clientes empresariales del sector financiero.',
-      en: 'Built real-time analytics dashboards and APIs for enterprise clients in the financial sector.',
-    },
-    achievements: [
-      {
-        es: 'Implementé un sistema de reportes que ahorró ~20 horas de trabajo manual por semana.',
-        en: 'Implemented a reporting system that saved ~20 hours of manual work per week.',
-      },
-      {
-        es: 'Aumenté la cobertura de pruebas del 40% al 90%.',
-        en: 'Increased test coverage from 40% to 90%.',
-      },
-    ],
-    tech: ['Vue', 'Python', 'FastAPI', 'MongoDB', 'Redis'],
-  },
-  {
-    company: 'Studio Creativo Pixel',
-    role: { es: 'Desarrollador Frontend', en: 'Frontend Developer' },
-    start: '2019',
-    end: '2021',
-    location: { es: 'Presencial — Bogotá', en: 'On-site — Bogotá' },
-    description: {
-      es: 'Construí sitios y aplicaciones web para clientes de diversos sectores, con foco en diseño y rendimiento.',
-      en: 'Built websites and web apps for clients across many industries, focused on design and performance.',
-    },
-    achievements: [
-      {
-        es: 'Entregué más de 25 proyectos en producción con una puntuación media de 95 en Lighthouse.',
-        en: 'Shipped 25+ production projects with an average Lighthouse score of 95.',
-      },
-    ],
-    tech: ['JavaScript', 'React', 'SASS', 'Figma'],
+    tech: ['TypeScript', 'NestJS', 'React', 'PostgreSQL', 'Docker', 'AWS', 'GitHub Actions', 'Traefik'],
   },
 ];
