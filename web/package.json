@@ -8,6 +8,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "build:pdf": "node ../pdf/generate-cv.js",
     "preview": "astro preview",
     "astro": "astro"
   },

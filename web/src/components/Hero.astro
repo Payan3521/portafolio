@@ -45,10 +45,39 @@ const socials = [
           {tr('hero.contact')}
           <Icon name="arrow-right" size={17} />
         </a>
-        <a href={`${import.meta.env.BASE_URL}${resume.replace(/^\//, '')}`} class="btn btn-ghost" download>
-          <Icon name="download" size={17} />
-          {tr('hero.downloadCV')}
-        </a>
+
+        <!-- Botón CV con selector directo ES / EN -->
+        <div class="inline-flex items-center rounded-xl border border-border bg-surface p-1 shadow-sm transition-colors hover:border-accent/40">
+          <a
+            href={`${import.meta.env.BASE_URL}${resume.replace(/^\//, '')}`}
+            class="inline-flex items-center gap-2 rounded-lg px-3.5 py-2 text-sm font-semibold text-text transition-colors hover:bg-bg-soft hover:text-accent-2"
+            download
+            title={lang === 'es' ? 'Descargar hoja de vida en PDF' : 'Download CV in PDF'}
+          >
+            <Icon name="download" size={16} />
+            <span>{tr('hero.downloadCV')}</span>
+          </a>
+          <span class="mx-0.5 h-4 w-px bg-border"></span>
+          <div class="flex items-center px-1 text-xs font-mono font-medium">
+            <a
+              href={`${import.meta.env.BASE_URL}${profile.resume.es.replace(/^\//, '')}`}
+              download
+              class={`rounded px-1.5 py-1 transition-colors ${lang === 'es' ? 'text-accent-2 font-bold bg-accent/15' : 'text-muted hover:text-text'}`}
+              title="Descargar versión en Español"
+            >
+              ES
+            </a>
+            <span class="text-border/60">/</span>
+            <a
+              href={`${import.meta.env.BASE_URL}${profile.resume.en.replace(/^\//, '')}`}
+              download
+              class={`rounded px-1.5 py-1 transition-colors ${lang === 'en' ? 'text-accent-2 font-bold bg-accent/15' : 'text-muted hover:text-text'}`}
+              title="Download English version"
+            >
+              EN
+            </a>
+          </div>
+        </div>
       </div>
 
       <ul class="mt-9 flex items-center gap-3">
