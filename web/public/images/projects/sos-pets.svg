@@ -161,14 +161,6 @@
 
     <!-- Pet Details Section -->
     <g transform="translate(24, 305)">
-      <div xmlns="http://www.w3.org/1999/xhtml">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-          <div>
-            <h3 style="margin:0; font-size:24px; font-weight:800; color:#ffffff; font-family:system-ui,sans-serif;">Max &amp; Luna</h3>
-            <p style="margin:4px 0 0 0; font-size:13px; color:#94a3b8; font-family:system-ui,sans-serif;">Mestizo · 1 año · Tamaño mediano · Esterilizado</p>
-          </div>
-        </div>
-      </div>
       <text x="0" y="24" font-family="system-ui, sans-serif" font-size="24" font-weight="800" fill="#ffffff">Max</text>
       <text x="58" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#f97316">(Mestizo Noble)</text>
       <text x="0" y="48" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">1 año · Macho · Vacunado, desparasitado y esterilizado</text>
@@ -308,3 +300,4 @@
     </g>
   </g>
 </svg>
+

@@ -27,8 +27,8 @@
 
     <!-- UI Surface Gradients -->
     <linearGradient id="ui-dark" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0b131cd9"/>
-      <stop offset="100%" stop-color="#050a10f2"/>
+      <stop offset="0%" stop-color="#0b131c" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#050a10" stop-opacity="0.96"/>
     </linearGradient>
 
     <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -84,7 +84,6 @@
   <!-- Iconic Quindío Wax Palms (Palma de Cera - Ceroxylon quindiuense) -->
   <!-- Palm 1 (Left tall) -->
   <g transform="translate(180, 160)">
-    <!-- Thin trunk -->
     <path d="M12 280 Q10 140 14 0" stroke="#d1d5db" stroke-width="4.5" fill="none" opacity="0.85"/>
     <path d="M12 280 Q10 140 14 0" stroke="#6b7280" stroke-width="2" fill="none" opacity="0.6"/>
     <!-- Palm Crown -->
@@ -128,11 +127,10 @@
 
   <!-- Top Navigation Bar -->
   <g transform="translate(60, 35)" filter="url(#heavy-shadow)">
-    <rect width="1080" height="66" rx="18" fill="#080e16eb" stroke="#1e2e42" stroke-width="1.2"/>
+    <rect width="1080" height="66" rx="18" fill="#080e16" fill-opacity="0.92" stroke="#1e2e42" stroke-width="1.2"/>
 
     <!-- Brand Logo -->
     <g transform="translate(24, 15)">
-      <!-- Mountain / Compass Icon Badge -->
       <rect width="36" height="36" rx="10" fill="url(#gold-cta)"/>
       <path d="M10 26 L18 10 L26 26 Z" fill="#0b131c"/>
       <path d="M18 10 L22 18 L18 20 L14 18 Z" fill="#ffffff"/>
@@ -157,7 +155,7 @@
 
   <!-- Search & Filter Bar Floating -->
   <g transform="translate(60, 125)" filter="url(#card-shadow)">
-    <rect width="1080" height="60" rx="14" fill="#0d1825ee" stroke="#22364e" stroke-width="1"/>
+    <rect width="1080" height="60" rx="14" fill="#0d1825" fill-opacity="0.92" stroke="#22364e" stroke-width="1"/>
 
     <g transform="translate(24, 18)">
       <circle cx="12" cy="12" r="7" stroke="#f59e0b" stroke-width="2" fill="none"/>
@@ -181,9 +179,7 @@
     <!-- Image mockup header -->
     <g transform="translate(14, 14)">
       <rect width="312" height="190" rx="14" fill="#13271f"/>
-      <!-- Mountain & Palm Graphic representation -->
       <path d="M0 190 L90 70 L170 140 L240 50 L312 190 Z" fill="#0b1e16" opacity="0.8"/>
-      <!-- Miniature palm -->
       <line x1="220" y1="170" x2="220" y2="70" stroke="#e2e8f0" stroke-width="2.5"/>
       <circle cx="220" cy="65" r="14" fill="#10b981"/>
 
@@ -192,7 +188,7 @@
       <text x="64" y="28" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">ECOTURISMO</text>
 
       <!-- Rating Pill -->
-      <rect x="236" y="12" width="64" height="24" rx="6" fill="#0b131cd9"/>
+      <rect x="236" y="12" width="64" height="24" rx="6" fill="#0b131c" fill-opacity="0.85"/>
       <text x="268" y="28" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f59e0b" text-anchor="middle">★ 4.9</text>
     </g>
 
@@ -225,7 +221,6 @@
     <!-- Image mockup header -->
     <g transform="translate(14, 14)">
       <rect width="312" height="190" rx="14" fill="#29180c"/>
-      <!-- Coffee Art representation -->
       <circle cx="156" cy="95" r="50" fill="#451a03"/>
       <path d="M126 95 Q156 55 186 95 Q156 135 126 95 Z" fill="#b45309"/>
       <line x1="156" y1="65" x2="156" y2="125" stroke="#78350f" stroke-width="3"/>
@@ -233,7 +228,7 @@
       <rect x="12" y="12" width="118" height="24" rx="6" fill="url(#gold-cta)"/>
       <text x="71" y="28" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">CAFÉ DE ORIGEN</text>
 
-      <rect x="236" y="12" width="64" height="24" rx="6" fill="#0b131cd9"/>
+      <rect x="236" y="12" width="64" height="24" rx="6" fill="#0b131c" fill-opacity="0.85"/>
       <text x="268" y="28" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f59e0b" text-anchor="middle">★ 5.0</text>
     </g>
 
@@ -265,7 +260,6 @@
     <!-- Image mockup header -->
     <g transform="translate(14, 14)">
       <rect width="312" height="190" rx="14" fill="#1a1829"/>
-      <!-- Colonial Houses & Mirador graphic -->
       <polygon points="40,150 70,110 100,150" fill="#e11d48"/>
       <rect x="45" y="150" width="50" height="40" fill="#fef08a"/>
       <polygon points="120,140 160,95 200,140" fill="#0284c7"/>
@@ -276,7 +270,7 @@
       <rect x="12" y="12" width="100" height="24" rx="6" fill="#8b5cf6"/>
       <text x="62" y="28" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">CULTURA &amp; ARTE</text>
 
-      <rect x="236" y="12" width="64" height="24" rx="6" fill="#0b131cd9"/>
+      <rect x="236" y="12" width="64" height="24" rx="6" fill="#0b131c" fill-opacity="0.85"/>
       <text x="268" y="28" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f59e0b" text-anchor="middle">★ 4.8</text>
     </g>
 
