@@ -1,7 +1,7 @@
 ---
+// web/src/pages/index.astro
 // Página raíz: redirige al idioma preferido del visitante.
-// Se usa un pequeño script para detectar el idioma del navegador,
-// con respaldo en español (idioma por defecto).
+// Usa BASE_URL para que funcione con cualquier base (/, /portafolio/, etc.)
 ---
 
 <!doctype html>
@@ -10,32 +10,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Juan Pablo Bedoya Payán — Portafolio</title>
-    <link rel="canonical" href="/es/" />
-    <meta http-equiv="refresh" content="0; url=/es/" />
-    <link rel="alternate" hreflang="es" href="/es/" />
-    <link rel="alternate" hreflang="en" href="/en/" />
-    <link rel="alternate" hreflang="x-default" href="/es/" />
+    <link rel="canonical" href="{import.meta.env.BASE_URL}es/" />
+    <meta http-equiv="refresh" content="0; url={import.meta.env.BASE_URL}es/" />
+    <link rel="alternate" hreflang="es" href="{import.meta.env.BASE_URL}es/" />
+    <link rel="alternate" hreflang="en" href="{import.meta.env.BASE_URL}en/" />
+    <link rel="alternate" hreflang="x-default" href="{import.meta.env.BASE_URL}es/" />
     <style>
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        background: #080810;
-        color: #99a2bd;
-        font-family: system-ui, sans-serif;
-      }
+      body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #080810; color: #99a2bd; font-family: system-ui, sans-serif; }
       a { color: #22d3ee; }
     </style>
   </head>
   <body>
-    <p>
-      Redirigiendo… <a href="/es/">Español</a> · <a href="/en/">English</a>
-    </p>
+    <p>Redirigiendo… <a href="{import.meta.env.BASE_URL}es/">Español</a> · <a href="{import.meta.env.BASE_URL}en/">English</a></p>
     <script is:inline>
       (function () {
         var lang = (navigator.language || 'es').toLowerCase();
-        var target = lang.indexOf('en') === 0 ? '/en/' : '/es/';
+        var base = import.meta.env.BASE_URL || '/';
+        var target = lang.indexOf('en') === 0 ? base + 'en/' : base + 'es/';
         window.location.replace(target);
       })();
     </script>
