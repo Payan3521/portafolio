@@ -1,5 +1,8 @@
 ---
 // web/src/pages/index.astro
+const base = import.meta.env.BASE_URL;
+const esUrl = `${base}es/`;
+const enUrl = `${base}en/`;
 ---
 
 <!doctype html>
@@ -8,22 +11,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Juan Pablo Bedoya Payán — Portafolio</title>
-    <link rel="canonical" href="{Astro.base}es/" />
-    <meta http-equiv="refresh" content="0; url={Astro.base}es/" />
-    <link rel="alternate" hreflang="es" href="{Astro.base}es/" />
-    <link rel="alternate" hreflang="en" href="{Astro.base}en/" />
-    <link rel="alternate" hreflang="x-default" href="{Astro.base}es/" />
+    <link rel="canonical" href={esUrl} />
+    <meta http-equiv="refresh" content={`0; url=${esUrl}`} />
+    <link rel="alternate" hreflang="es" href={esUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={esUrl} />
     <style>
       body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #080810; color: #99a2bd; font-family: system-ui, sans-serif; }
       a { color: #22d3ee; }
     </style>
   </head>
   <body>
-    <p>Redirigiendo… <a href="{Astro.base}es/">Español</a> · <a href="{Astro.base}en/">English</a></p>
-    <script is:inline>
+    <p>Redirigiendo… <a href={esUrl}>Español</a> · <a href={enUrl}>English</a></p>
+    <script is:inline define:vars={{ base }}>
       (function () {
         var lang = (navigator.language || 'es').toLowerCase();
-        var base = "{Astro.base}";
         var target = lang.indexOf('en') === 0 ? base + 'en/' : base + 'es/';
         window.location.replace(target);
       })();

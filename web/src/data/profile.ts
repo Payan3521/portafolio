@@ -62,8 +62,8 @@ export const profile = {
     whatsapp: 'https://wa.me/573019298995',
   },
 
-  /** URL pública del sitio (para SEO) — ⚠️ CAMBIA POR TU DOMINIO REAL AL DESPLEGAR */
-  site: 'https://tudominio.com',
+  /** URL pública del sitio (para SEO) */
+  site: 'https://payan3521.github.io/portafolio',
 } as const;
 
 export const facts: Fact[] = [

@@ -45,7 +45,7 @@ const socials = [
           {tr('hero.contact')}
           <Icon name="arrow-right" size={17} />
         </a>
-        <a href={resume} class="btn btn-ghost" download>
+        <a href={`${import.meta.env.BASE_URL}${resume.replace(/^\//, '')}`} class="btn btn-ghost" download>
           <Icon name="download" size={17} />
           {tr('hero.downloadCV')}
         </a>
@@ -81,7 +81,7 @@ const socials = [
       <div class="relative rounded-[2rem] border border-border bg-surface/60 p-3 backdrop-blur">
         <div class="overflow-hidden rounded-[1.4rem] bg-bg-soft">
           <img
-            src={profile.photo}
+            src={`${import.meta.env.BASE_URL}${profile.photo.replace(/^\//, '')}`}
             alt={`${profile.name} — ${role}`}
             width="480"
             height="560"
