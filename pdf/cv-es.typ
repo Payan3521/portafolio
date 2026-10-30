@@ -10,12 +10,12 @@
   numbering: "1 / {total}",
   header: [
     #align(center)[
-      #text(size: 7.5pt, fill: gray, weight: 500)[JUAN PABLO BEDOYA PAYÁN · FULL STACK DEVELOPER · pablobedoya3521\@gmail.com · +57 301 929 8995 · Armenia, Quindío, Colombia]
+      #text(size: 7.5pt, fill: gray, weight: 500)[JUAN PABLO BEDOYA PAYÁN · FULL STACK DEVELOPER · pablobedoya3521\@gmail.com · +57 301 929 8995 · Armenia, Quindío, Colombia · payan3521.github.io/portafolio]
     ]
   ],
   footer: [
     #align(center)[
-      #text(size: 7pt, fill: gray)[github.com/Payan3521 · linkedin.com/in/juan-pablo-bedoya-payán · wa.me/573019298995]
+      #text(size: 7pt, fill: gray)[github.com/Payan3521 · linkedin.com/in/juan-pablo-bedoya-payán · wa.me/573019298995 · payan3521.github.io/portafolio]
     ]
   ]
 )
@@ -102,7 +102,7 @@
   text(size: 9pt, fill: muted)[
     pablobedoya3521\@gmail.com · +57 301 929 8995 · Armenia, Quindío, Colombia
     h(4pt) · h(4pt)
-    github.com/Payan3521 · linkedin.com/in/juan-pablo-bedoya-payán · wa.me/573019298995
+    github.com/Payan3521 · linkedin.com/in/juan-pablo-bedoya-payán · wa.me/573019298995 · payan3521.github.io/portafolio
   ]
 ]
 
