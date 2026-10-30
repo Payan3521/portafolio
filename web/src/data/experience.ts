@@ -10,11 +10,13 @@ export interface ExperienceItem {
   description: Localized;
   achievements: Localized[];
   tech: string[];
+  logo?: string;
 }
 
 export const experience: ExperienceItem[] = [
   {
     company: 'Universidad EAM — Laboratorio de Innovación',
+    logo: '/images/logo-innovacion.png',
     role: { es: 'Desarrollador de Software', en: 'Software Developer' },
     start: 'Mar 2025',
     end: null,

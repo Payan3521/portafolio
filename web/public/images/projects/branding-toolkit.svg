@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg-brand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#180e29"/>
+      <stop offset="50%" stop-color="#21103a"/>
+      <stop offset="100%" stop-color="#36175e"/>
+    </linearGradient>
+    <radialGradient id="glow-brand" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg-brand)"/>
+  <circle cx="400" cy="200" r="280" fill="url(#glow-brand)"/>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90"/>
+    <line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/>
+    <line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="200" y1="0" x2="200" y2="450"/>
+    <line x1="400" y1="0" x2="400" y2="450"/>
+    <line x1="600" y1="0" x2="600" y2="450"/>
+  </g>
+
+  <!-- Mockup Window -->
+  <g transform="translate(100, 55)">
+    <rect width="600" height="340" rx="16" fill="#140a24" fill-opacity="0.9" stroke="#a855f7" stroke-opacity="0.3" stroke-width="1.5"/>
+    <rect width="600" height="42" rx="16" fill="#201036"/>
+    <!-- Window buttons -->
+    <circle cx="24" cy="21" r="5.5" fill="#ef4444"/>
+    <circle cx="42" cy="21" r="5.5" fill="#f59e0b"/>
+    <circle cx="60" cy="21" r="5.5" fill="#10b981"/>
+    <text x="300" y="26" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" fill="#c084fc">branding-toolkit · design-system-generator</text>
+
+    <!-- Header Inside -->
+    <g transform="translate(40, 65)">
+      <text x="0" y="25" font-family="system-ui, sans-serif" font-weight="900" font-size="22" fill="#ffffff">Brand Guidelines <tspan fill="#c084fc">Generator</tspan></text>
+      <text x="0" y="45" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Generador automatizado de paletas de color, tipografía y assets de marca</text>
+    </g>
+
+    <!-- Color Palette Mockup -->
+    <g transform="translate(40, 130)">
+      <rect x="0" y="0" width="95" height="100" rx="10" fill="#6366f1"/>
+      <text x="47" y="85" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="#ffffff">#6366F1</text>
+
+      <rect x="105" y="0" width="95" height="100" rx="10" fill="#a855f7"/>
+      <text x="152" y="85" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="#ffffff">#A855F7</text>
+
+      <rect x="210" y="0" width="95" height="100" rx="10" fill="#ec4899"/>
+      <text x="257" y="85" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="#ffffff">#EC4899</text>
+
+      <rect x="315" y="0" width="95" height="100" rx="10" fill="#06b6d4"/>
+      <text x="362" y="85" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="#ffffff">#06B6D4</text>
+
+      <rect x="420" y="0" width="100" height="100" rx="10" fill="#10b981"/>
+      <text x="470" y="85" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="#ffffff">#10B981</text>
+    </g>
+
+    <!-- Typography Specs -->
+    <g transform="translate(40, 250)">
+      <rect width="520" height="60" rx="8" fill="#1e1033" stroke="#ffffff" stroke-opacity="0.08"/>
+      <text x="20" y="26" font-family="system-ui, sans-serif" font-weight="700" font-size="13" fill="#ffffff">Aa Bb Cc — Inter Display &amp; JetBrains Mono</text>
+      <text x="20" y="46" font-family="'JetBrains Mono', monospace" font-size="10" fill="#a855f7">Export formats: SVG · PNG · PDF Brand Book · CSS Tokens</text>
+    </g>
+  </g>
+</svg>

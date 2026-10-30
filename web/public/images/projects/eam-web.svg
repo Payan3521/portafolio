@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg-eam" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f24"/>
+      <stop offset="50%" stop-color="#141c45"/>
+      <stop offset="100%" stop-color="#1e2b6a"/>
+    </linearGradient>
+    <linearGradient id="accent-eam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <radialGradient id="glow-eam" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg-eam)"/>
+  <circle cx="400" cy="200" r="300" fill="url(#glow-eam)"/>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.05" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90"/>
+    <line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/>
+    <line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="160" y1="0" x2="160" y2="450"/>
+    <line x1="320" y1="0" x2="320" y2="450"/>
+    <line x1="480" y1="0" x2="480" y2="450"/>
+    <line x1="640" y1="0" x2="640" y2="450"/>
+  </g>
+
+  <!-- Browser Window Mockup -->
+  <g transform="translate(100, 55)">
+    <!-- Window frame -->
+    <rect width="600" height="340" rx="16" fill="#0d1329" fill-opacity="0.9" stroke="#3b82f6" stroke-opacity="0.3" stroke-width="1.5"/>
+    <rect width="600" height="42" rx="16" fill="#151d3b"/>
+    <!-- Window buttons -->
+    <circle cx="24" cy="21" r="5.5" fill="#ef4444"/>
+    <circle cx="42" cy="21" r="5.5" fill="#f59e0b"/>
+    <circle cx="60" cy="21" r="5.5" fill="#10b981"/>
+    <!-- Search bar -->
+    <rect x="120" y="9" width="360" height="24" rx="6" fill="#090d1f" stroke="#ffffff" stroke-opacity="0.08"/>
+    <text x="300" y="25" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94a3b8">https://www.eam.edu.co</text>
+
+    <!-- Content area -->
+    <!-- Navbar inside mockup -->
+    <rect x="0" y="42" width="600" height="48" fill="#101733" fill-opacity="0.7"/>
+    <!-- EAM Brand text -->
+    <text x="40" y="73" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="22" letter-spacing="1" fill="#ffffff">UNIVERSIDAD <tspan fill="#38bdf8">EAM</tspan></text>
+    
+    <!-- Hero Mockup inside -->
+    <text x="40" y="145" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="26" fill="#ffffff">Portal Web Institucional</text>
+    <text x="40" y="175" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#94a3b8">Oferta Académica · Admisiones · Campus Virtual · Innovación</text>
+
+    <!-- Feature Cards inside mockup -->
+    <g transform="translate(40, 205)">
+      <rect width="160" height="100" rx="10" fill="#162044" stroke="#ffffff" stroke-opacity="0.08"/>
+      <circle cx="30" cy="30" r="14" fill="#3b82f6" fill-opacity="0.2"/>
+      <text x="30" y="34" text-anchor="middle" font-size="12" fill="#38bdf8">🎓</text>
+      <text x="20" y="65" font-family="system-ui, sans-serif" font-weight="700" font-size="12" fill="#ffffff">Pregrados</text>
+      <text x="20" y="82" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Ing. de Software y más</text>
+    </g>
+
+    <g transform="translate(220, 205)">
+      <rect width="160" height="100" rx="10" fill="#162044" stroke="#ffffff" stroke-opacity="0.08"/>
+      <circle cx="30" cy="30" r="14" fill="#06b6d4" fill-opacity="0.2"/>
+      <text x="30" y="34" text-anchor="middle" font-size="12" fill="#22d3ee">💡</text>
+      <text x="20" y="65" font-family="system-ui, sans-serif" font-weight="700" font-size="12" fill="#ffffff">Innovación</text>
+      <text x="20" y="82" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Laboratorio de I+D</text>
+    </g>
+
+    <g transform="translate(400, 205)">
+      <rect width="160" height="100" rx="10" fill="#162044" stroke="#ffffff" stroke-opacity="0.08"/>
+      <circle cx="30" cy="30" r="14" fill="#8b5cf6" fill-opacity="0.2"/>
+      <text x="30" y="34" text-anchor="middle" font-size="12" fill="#a78bfa">🌐</text>
+      <text x="20" y="65" font-family="system-ui, sans-serif" font-weight="700" font-size="12" fill="#ffffff">Admisiones</text>
+      <text x="20" y="82" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Inscripción en línea</text>
+    </g>
+  </g>
+
+  <!-- Floating Badge -->
+  <g transform="translate(620, 360)">
+    <rect width="140" height="34" rx="17" fill="#0284c7" fill-opacity="0.9" stroke="#ffffff" stroke-opacity="0.2"/>
+    <text x="70" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="600" font-size="12" fill="#ffffff">eam.edu.co</text>
+  </g>
+</svg>

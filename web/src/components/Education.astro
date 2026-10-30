@@ -27,9 +27,20 @@ const tr = useTranslations(lang);
               <span class="dot absolute left-0 top-[1.4rem]" aria-hidden="true"></span>
               <div class="card p-6">
                 <div class="flex items-center justify-between gap-3">
-                  <span class="icon-badge h-10 w-10">
-                    <Icon name="graduation-cap" size={18} />
-                  </span>
+                  {item.logo ? (
+                    <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-border bg-surface p-2 shadow-sm">
+                      <img
+                        src={`${import.meta.env.BASE_URL}${item.logo.replace(/^\//, '')}`}
+                        alt={item.institution}
+                        class="h-full w-full object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : (
+                    <span class="icon-badge h-10 w-10">
+                      <Icon name="graduation-cap" size={18} />
+                    </span>
+                  )}
                   <span class="chip shrink-0">
                     {item.start} — {item.end ?? tr('experience.present')}
                   </span>

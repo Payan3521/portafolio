@@ -27,9 +27,21 @@ const tr = useTranslations(lang);
 
             <div class="card p-6">
               <div class="flex flex-wrap items-start justify-between gap-3">
-                <div>
-                  <h3 class="text-lg font-semibold text-text">{t(lang, job.role)}</h3>
-                  <p class="mt-1 text-sm font-medium text-accent-2">{job.company}</p>
+                <div class="flex items-start gap-3.5">
+                  {job.logo && (
+                    <div class="mt-0.5 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-border bg-surface p-1.5 shadow-sm">
+                      <img
+                        src={`${import.meta.env.BASE_URL}${job.logo.replace(/^\//, '')}`}
+                        alt={job.company}
+                        class="h-full w-full object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+                  <div>
+                    <h3 class="text-lg font-semibold text-text">{t(lang, job.role)}</h3>
+                    <p class="mt-1 text-sm font-medium text-accent-2">{job.company}</p>
+                  </div>
                 </div>
                 <span class="chip shrink-0">
                   <Icon name="briefcase" size={13} />

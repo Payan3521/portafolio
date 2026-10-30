@@ -6,6 +6,7 @@ export interface EducationItem {
   start: string;
   end: string | null;
   description: Localized;
+  logo?: string;
 }
 
 export interface Certification {
@@ -18,6 +19,7 @@ export interface Certification {
 export const education: EducationItem[] = [
   {
     institution: 'Universidad EAM',
+    logo: '/images/eam-logo.svg',
     degree: { es: 'Ingeniería de Software', en: 'Software Engineering' },
     start: '2024',
     end: null,
@@ -28,6 +30,7 @@ export const education: EducationItem[] = [
   },
   {
     institution: 'SENA — Media Técnica',
+    logo: '/images/sena-logo.svg',
     degree: { es: 'Técnico en Análisis y Desarrollo de Software', en: 'Technical Degree in Software Analysis and Development' },
     start: '2022',
     end: '2023',

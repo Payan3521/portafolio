@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg-esseguros" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a151b"/>
+      <stop offset="50%" stop-color="#0d282e"/>
+      <stop offset="100%" stop-color="#113e3b"/>
+    </linearGradient>
+    <linearGradient id="glow-teal" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#14b8a6" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#14b8a6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg-esseguros)"/>
+  <circle cx="400" cy="200" r="280" fill="url(#glow-teal)"/>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90"/>
+    <line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/>
+    <line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="200" y1="0" x2="200" y2="450"/>
+    <line x1="400" y1="0" x2="400" y2="450"/>
+    <line x1="600" y1="0" x2="600" y2="450"/>
+  </g>
+
+  <!-- Mockup Panel -->
+  <g transform="translate(100, 55)">
+    <rect width="600" height="340" rx="16" fill="#0a1b20" fill-opacity="0.9" stroke="#14b8a6" stroke-opacity="0.3" stroke-width="1.5"/>
+    <rect width="600" height="42" rx="16" fill="#0f2930"/>
+    <!-- Window buttons -->
+    <circle cx="24" cy="21" r="5.5" fill="#ef4444"/>
+    <circle cx="42" cy="21" r="5.5" fill="#f59e0b"/>
+    <circle cx="60" cy="21" r="5.5" fill="#10b981"/>
+    <!-- Title bar -->
+    <text x="300" y="26" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" fill="#5eead4">esseguros · automation-pipeline</text>
+
+    <!-- Header inside -->
+    <g transform="translate(40, 65)">
+      <rect width="44" height="44" rx="10" fill="#0d9488" fill-opacity="0.3" stroke="#2dd4bf" stroke-width="1.5"/>
+      <path d="M22 12l8 4v8c0 5-3.5 9-8 10-4.5-1-8-5-8-10v-8l8-4z" fill="none" stroke="#2dd4bf" stroke-width="2"/>
+      <path d="M18 24l3 3 6-6" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round"/>
+      <text x="56" y="25" font-family="system-ui, sans-serif" font-weight="800" font-size="20" fill="#ffffff">ESSeguros <tspan fill="#2dd4bf">Automatización</tspan></text>
+      <text x="56" y="42" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Integración de pólizas, emisión automatizada y flujos de trabajo</text>
+    </g>
+
+    <!-- Pipeline Nodes -->
+    <g transform="translate(40, 145)">
+      <!-- Step 1 -->
+      <rect x="0" y="0" width="140" height="75" rx="8" fill="#11343c" stroke="#2dd4bf" stroke-opacity="0.4"/>
+      <text x="15" y="25" font-family="'JetBrains Mono', monospace" font-size="10" fill="#2dd4bf">01. INGESTIÓN</text>
+      <text x="15" y="45" font-family="system-ui, sans-serif" font-weight="600" font-size="12" fill="#ffffff">Captura de Datos</text>
+      <text x="15" y="62" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">APIs &amp; Webhooks</text>
+
+      <!-- Arrow 1 -->
+      <path d="M150 37h30m-6-6l6 6-6 6" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <!-- Step 2 -->
+      <rect x="190" y="0" width="140" height="75" rx="8" fill="#11343c" stroke="#2dd4bf" stroke-opacity="0.4"/>
+      <text x="205" y="25" font-family="'JetBrains Mono', monospace" font-size="10" fill="#2dd4bf">02. PROCESO</text>
+      <text x="205" y="45" font-family="system-ui, sans-serif" font-weight="600" font-size="12" fill="#ffffff">Validación Póliza</text>
+      <text x="205" y="62" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Reglas de Negocio</text>
+
+      <!-- Arrow 2 -->
+      <path d="M340 37h30m-6-6l6 6-6 6" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <!-- Step 3 -->
+      <rect x="380" y="0" width="140" height="75" rx="8" fill="#11343c" stroke="#10b981" stroke-opacity="0.6"/>
+      <text x="395" y="25" font-family="'JetBrains Mono', monospace" font-size="10" fill="#34d399">03. DESPACHO</text>
+      <text x="395" y="45" font-family="system-ui, sans-serif" font-weight="600" font-size="12" fill="#ffffff">Notificación &amp; Sync</text>
+      <text x="395" y="62" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Base de Datos &amp; PDF</text>
+    </g>
+
+    <!-- Bottom Metrics -->
+    <g transform="translate(40, 245)">
+      <rect width="520" height="65" rx="8" fill="#0c2025" stroke="#ffffff" stroke-opacity="0.06"/>
+      <text x="20" y="30" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Estado del servicio</text>
+      <circle cx="140" cy="26" r="4" fill="#10b981"/>
+      <text x="150" y="30" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#34d399">Activo 99.9%</text>
+
+      <text x="20" y="50" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">Node.js · TypeScript · REST APIs · Automatización</text>
+    </g>
+  </g>
+</svg>
