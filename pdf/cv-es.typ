@@ -10,7 +10,7 @@
   numbering: "1 / {total}",
   header: [
     #align(center)[
-      #text(size: 8pt, fill: gray, weight: 500)[JUAN PABLO BEDOYA PAYÁN · FULL STACK DEVELOPER · pablobedoya3521\@gmail.com · +57 301 929 8995 · Armenia, Quindío, Colombia]
+      #text(size: 7.5pt, fill: gray, weight: 500)[JUAN PABLO BEDOYA PAYÁN · FULL STACK DEVELOPER · pablobedoya3521\@gmail.com · +57 301 929 8995 · Armenia, Quindío, Colombia]
     ]
   ],
   footer: [
@@ -22,32 +22,38 @@
 
 // ── Estilos globales ─────────────────────────────────────
 #set text(font: "DejaVu Sans", size: 10.5pt)
-#set par(justify: true, spacing: 4pt)
+#set par(justify: true, spacing: 4pt, leading: 1.5em)
 
 // Colores
 #let accent = rgb("#8b5cf6")
+#let accent2 = rgb("#22d3ee")
 #let dark = rgb("#080810")
 #let muted = rgb("#99a2bd")
+#let soft = rgb("#f8fafc")
 
 // Helpers
 #let section-title(title) = {
-  v(4pt)
+  v(6pt)
   text(size: 13pt, weight: 700, fill: dark)[upper(title)]
   h(2pt)
   line(length: 100%, stroke: (paint: accent, thickness: 2pt))
-  v(8pt)
+  v(10pt)
 }
 
 #let bullet-item(title, desc, date: none, location: none) = {
   v(2pt)
-  stack(dir: ltr, spacing: 4pt)[
-    text(weight: 600, size: 10.5pt)[title]
-    if date != none { h(4pt) text(size: 9pt, fill: muted)[date] }
-    if location != none { h(4pt) text(size: 9pt, fill: muted)[location] }
-  ]
+  hstack(
+    ratio: (1, 1),
+    [
+      text(weight: 600, size: 10.5pt)[title]
+      if date != none { h(4pt) text(size: 9pt, fill: muted)[date] }
+      if location != none { h(4pt) text(size: 9pt, fill: muted)[location] }
+    ],
+    align: right,
+  )
   v(1pt)
-  pad(left: 12pt)[ text(fill: dark)[desc] ]
-  v(3pt)
+  indent(12pt)[ text(fill: dark)[desc] ]
+  v(4pt)
 }
 
 #let level-color = (
@@ -55,6 +61,13 @@
   advanced: rgb("#3b82f6"),
   intermediate: rgb("#f59e0b"),
   basic: rgb("#64748b"),
+)
+
+#let level-label = (
+  expert: "Experto",
+  advanced: "Avanzado",
+  intermediate: "Intermedio",
+  basic: "Básico",
 )
 
 #let skill-chip(name, level) = {
@@ -71,7 +84,7 @@
   v(6pt)
   text(weight: 600, size: 10pt, fill: dark)[title]
   v(4pt)
-  stack(dir: ltr, spacing: 4pt)[..skills.map(s => skill-chip(s.name, s.level))]
+  flow(gap: 4pt, ..skills.map(s => skill-chip(s.name, s.level)))
   v(6pt)
 }
 
@@ -93,42 +106,43 @@
   ]
 ]
 
-#v(10pt)
-#line(length: 100%, stroke: (paint: accent, thickness: 1.5pt))
-#v(12pt)
+v(10pt)
+line(length: 100%, stroke: (paint: accent, thickness: 1.5pt))
+v(12pt)
 
 // ── PERFIL ───────────────────────────────────────────────
-#section-title("Perfil")
+section-title("Perfil")
+
 Estudiante de Ingeniería de Software en la Universidad EAM (Armenia, Quindío), cursando 7.º de 8 semestres. Inicié la carrera en febrero de 2024 y antes obtuve el título técnico en Análisis y Desarrollo de Software por el SENA (media técnica).
 
-Me desempeño como Full Stack: backend, frontend, móvil, cloud (AWS), DevOps, seguridad e integración de IA. Mis fortalezas: liderazgo técnico, comunicación clara, aprendizaje autodidacta rápido, uso avanzado de IA, visión de futuro, documentación exhaustiva y orden. Inglés A2 avanzado (lectura/escritura). Busco oportunidades actualmente.
+Me desempeño como Full Stack: backend, frontend, móvil, cloud (AWS), DevOps, seguridad e integración de IA. Mis fortalezas: liderazgo técnico, comunicación clara, aprendizaje autodidacta rápido, uso avanzado de IA, visión de futuro, documentación exhaustiva y orden. Inglés A2 avanzado (lectura/escritura). Busco oportunidades a partir de 2026.
 
-#v(6pt)
+v(6pt)
 
 // ── EXPERIENCIA ──────────────────────────────────────────
-#section-title("Experiencia")
+section-title("Experiencia")
 
-#bullet-item(
+bullet-item(
   "Universidad EAM — Laboratorio de Innovación",
   "Desarrollo full stack de productos propios de la universidad y soluciones para clientes externos. Participación en todo el ciclo: arquitectura, backend, frontend, móvil, cloud (AWS), DevOps, CI/CD, testing y documentación.",
   date: "Mar 2025 – Actualidad",
   location: "Armenia, Quindío (Híbrido/Remoto)"
 )
 
-#v(2pt)
-#text(weight: 600, size: 9.5pt)[Logros destacados:]
-#v(2pt)
+v(2pt)
+text(weight: 600, size: 9.5pt)[Logros destacados:]
+v(2pt)
 
-#bullet-item("", "Lideré el desarrollo end-to-end de Prospectiva 2050 (monorepo NestJS + 3 React apps + PostgreSQL), desplegado en AWS EC2 con CI/CD a GHCR y Traefik.")
-#bullet-item("", "Construí Emdecob: sitio corporativo Next.js 14 + Tailwind con SEO técnico, blog, gestión de servicios y páginas legales, desplegado en Vercel/AWS.")
-#bullet-item("", "Colaboré en la plataforma web institucional eam.edu.co (oferta académica, admisiones, noticias).")
-#bullet-item("", "Automatización de procesos para ESSeguros (cliente externo): integración de APIs, flujos de trabajo y despliegue.")
-#bullet-item("", "Desarrollé Rural Adventure (turismo rural Quindío) y SOS Pets (plataforma de adopción de mascotas).")
+bullet-item("", "Lideré el desarrollo end-to-end de Prospectiva 2050 (monorepo NestJS + 3 React apps + PostgreSQL), desplegado en AWS EC2 con CI/CD a GHCR y Traefik.")
+bullet-item("", "Construí Emdecob: sitio corporativo Next.js 14 + Tailwind con SEO técnico, blog, gestión de servicios y páginas legales, desplegado en Vercel/AWS.")
+bullet-item("", "Colaboré en la plataforma web institucional eam.edu.co (oferta académica, admisiones, noticias).")
+bullet-item("", "Automatización de procesos para ESSeguros (cliente externo): integración de APIs, flujos de trabajo y despliegue.")
+bullet-item("", "Desarrollé Rural Adventure (turismo rural Quindío) y SOS Pets (plataforma de adopción de mascotas).")
 
-#v(4pt)
-#text(weight: 600, size: 9.5pt, fill: accent)[Stack principal:]
-#v(2pt)
-#stack(dir: ltr, spacing: 4pt)[
+v(4pt)
+text(weight: 600, size: 9.5pt, fill: accent)[Stack principal:]
+v(2pt)
+flow(gap: 4pt,
   skill-chip("TypeScript", "expert"),
   skill-chip("NestJS", "advanced"),
   skill-chip("React", "expert"),
@@ -140,57 +154,57 @@ Me desempeño como Full Stack: backend, frontend, móvil, cloud (AWS), DevOps, s
   skill-chip("Traefik", "advanced"),
   skill-chip("Tailwind CSS", "expert"),
   skill-chip("Prisma", "advanced"),
-]
+)
 
-#v(10pt)
+v(10pt)
 
 // ── PROYECTOS DESTACADOS ─────────────────────────────────
-#section-title("Proyectos Destacados")
+section-title("Proyectos Destacados")
 
-#bullet-item(
+bullet-item(
   "Prospectiva 2050 — Horizonte Quindío",
   "Plataforma y repositorio de información: sitio público dinámico (editable sin recompilar), backoffice con roles, bandeja de mensajes con estados, app de repositorio documental con estadísticas. Monorepo: NestJS + 3 React apps + PostgreSQL, AWS EC2, CI/CD GHCR + Traefik.",
   date: "Destacado",
   location: "horizontequindio2050.com"
 )
 
-#bullet-item(
+bullet-item(
   "Emdecob — Sitio web corporativo",
   "Sitio completo: servicios (contact center, jurídico, propiedad horizontal, recuperación de cartera), blog con SEO técnico, gestión de contenido sin recompilación, páginas legales. Next.js 14 + TypeScript + Tailwind, Vercel/AWS.",
   date: "Destacado",
   location: "emdecob.com · github.com/Payan3521/emdecob"
 )
 
-#bullet-item(
+bullet-item(
   "Plataforma web Universidad EAM",
   "Sitio institucional: oferta académica, admisiones, noticias. Desarrollo e implementación como parte del Laboratorio de Innovación.",
   date: "Colaboración",
   location: "eam.edu.co"
 )
 
-#v(10pt)
+v(10pt)
 
 // ── EDUCACIÓN ────────────────────────────────────────────
-#section-title("Educación")
+section-title("Educación")
 
-#bullet-item(
+bullet-item(
   "Universidad EAM",
   "Ingeniería de Software — Cursando 7.º de 8 semestres (iniciado feb 2024). Algoritmos, estructuras de datos, bases de datos, arquitectura, redes, ingeniería de requisitos, metodologías ágiles.",
   date: "2024 – Presente"
 )
 
-#bullet-item(
+bullet-item(
   "SENA — Media Técnica",
   "Técnico en Análisis y Desarrollo de Software. Fundamentos de programación, bases de datos relacionales, desarrollo web (HTML, CSS, JavaScript), metodologías ágiles (Scrum), control de versiones (Git) y bases de testing.",
   date: "2022 – 2023"
 )
 
-#v(10pt)
+v(10pt)
 
 // ── HABILIDADES TÉCNICAS ─────────────────────────────────
-#section-title("Habilidades Técnicas")
+section-title("Habilidades Técnicas")
 
-#skill-group("Core Languages", (
+skill-group("Core Languages", (
   (name: "TypeScript", level: "expert"),
   (name: "JavaScript", level: "expert"),
   (name: "Python", level: "advanced"),
@@ -199,7 +213,7 @@ Me desempeño como Full Stack: backend, frontend, móvil, cloud (AWS), DevOps, s
   (name: "Java", level: "intermediate"),
 ))
 
-#skill-group("Frontend", (
+skill-group("Frontend", (
   (name: "React", level: "expert"),
   (name: "Next.js", level: "advanced"),
   (name: "Astro", level: "advanced"),
@@ -210,7 +224,7 @@ Me desempeño como Full Stack: backend, frontend, móvil, cloud (AWS), DevOps, s
   (name: "Angular", level: "basic"),
 ))
 
-#skill-group("Backend", (
+skill-group("Backend", (
   (name: "Node.js", level: "expert"),
   (name: "NestJS", level: "advanced"),
   (name: "Express", level: "expert"),
@@ -221,7 +235,7 @@ Me desempeño como Full Stack: backend, frontend, móvil, cloud (AWS), DevOps, s
   (name: "GraphQL", level: "intermediate"),
 ))
 
-#skill-group("Bases de Datos", (
+skill-group("Bases de Datos", (
   (name: "PostgreSQL", level: "advanced"),
   (name: "Redis", level: "advanced"),
   (name: "Prisma", level: "advanced"),
@@ -229,7 +243,7 @@ Me desempeño como Full Stack: backend, frontend, móvil, cloud (AWS), DevOps, s
   (name: "MongoDB", level: "intermediate"),
 ))
 
-#skill-group("Cloud & DevOps", (
+skill-group("Cloud & DevOps", (
   (name: "AWS EC2", level: "advanced"),
   (name: "AWS S3", level: "advanced"),
   (name: "CloudFront", level: "intermediate"),
@@ -241,13 +255,13 @@ Me desempeño como Full Stack: backend, frontend, móvil, cloud (AWS), DevOps, s
   (name: "CI/CD", level: "expert"),
 ))
 
-#skill-group("Desarrollo Móvil", (
+skill-group("Desarrollo Móvil", (
   (name: "Kotlin", level: "advanced"),
   (name: "Android", level: "advanced"),
   (name: "React Native", level: "intermediate"),
 ))
 
-#skill-group("Testing & Calidad", (
+skill-group("Testing & Calidad", (
   (name: "Jest", level: "advanced"),
   (name: "Vitest", level: "advanced"),
   (name: "Playwright", level: "intermediate"),
@@ -256,7 +270,7 @@ Me desempeño como Full Stack: backend, frontend, móvil, cloud (AWS), DevOps, s
   (name: "TypeScript Strict", level: "expert"),
 ))
 
-#skill-group("IA & Automatización", (
+skill-group("IA & Automatización", (
   (name: "Gemini API", level: "advanced"),
   (name: "OpenAI API", level: "advanced"),
   (name: "Prompt Engineering", level: "expert"),
@@ -265,7 +279,7 @@ Me desempeño como Full Stack: backend, frontend, móvil, cloud (AWS), DevOps, s
   (name: "OpenCode", level: "advanced"),
 ))
 
-#skill-group("Herramientas & Flujo", (
+skill-group("Herramientas & Flujo", (
   (name: "Git", level: "expert"),
   (name: "GitHub", level: "expert"),
   (name: "Linux", level: "advanced"),
@@ -276,12 +290,12 @@ Me desempeño como Full Stack: backend, frontend, móvil, cloud (AWS), DevOps, s
   (name: "DNS Management", level: "intermediate"),
 ))
 
-#v(10pt)
+v(10pt)
 
 // ── IDIOMAS ──────────────────────────────────────────────
-#section-title("Idiomas")
-#bullet-item("Español", "Nativo")
-#bullet-item("Inglés", "A2 Avanzado — Lectura/escritura fluida, habla/escucha en desarrollo")
+section-title("Idiomas")
+bullet-item("Español", "Nativo")
+bullet-item("Inglés", "A2 Avanzado — Lectura/escritura fluida, habla/escucha en desarrollo")
 
-#v(6pt)
-#align(center)[ text(size: 8pt, fill: gray, weight: 500)[— Fin del currículum —] ]
+v(6pt)
+align(center)[ text(size: 8pt, fill: gray, weight: 500)[— Fin del currículum —] ]
