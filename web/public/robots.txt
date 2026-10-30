@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# ⚠️ CAMBIA 'https://tudominio.com' POR TU DOMINIO REAL AL DESPLEGAR
+Sitemap: https://tudominio.com/sitemap-index.xml

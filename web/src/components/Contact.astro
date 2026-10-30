@@ -21,11 +21,12 @@ const contactItems = [
 const socials = [
   { name: 'GitHub', href: profile.social.github, icon: 'github' },
   { name: 'LinkedIn', href: profile.social.linkedin, icon: 'linkedin' },
-  { name: 'Twitter', href: profile.social.twitter, icon: 'twitter' },
+  { name: 'WhatsApp', href: profile.social.whatsapp, icon: 'phone' },
 ].filter((s) => s.href);
 
-// Cambia esto por tu clave real de https://web3forms.com (gratis).
-const WEB3FORMS_KEY = 'TU_ACCESS_KEY_AQUI';
+// 👉 REGÍSTRATE EN https://web3forms.com (gratis, sin backend) Y PEGA TU ACCESS KEY AQUÍ
+// Mientras no configures la clave, el formulario abre el cliente de correo (mailto) como fallback.
+const WEB3FORMS_KEY = '2a4b22cb-e00a-4c39-8bfa-afd0623907b6';
 ---
 
 <section id="contact" class="section">

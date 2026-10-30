@@ -1,0 +1,252 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import Icon from './Icon.astro';
+import TechLogo from './TechLogo.astro';
+import { skillGroups } from '../data/skills';
+import { useTranslations } from '../i18n/ui';
+import type { Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const tr = useTranslations(lang);
+
+const levelConfig = {
+  expert: { label: { es: 'Experto', en: 'Expert' }, color: 'emerald', glow: '10b981', width: 100 },
+  advanced: { label: { es: 'Avanzado', en: 'Advanced' }, color: 'blue', glow: '3b82f6', width: 85 },
+  intermediate: { label: { es: 'Intermedio', en: 'Intermediate' }, color: 'amber', glow: 'f59e0b', width: 65 },
+  basic: { label: { es: 'Básico', en: 'Basic' }, color: 'slate', glow: '64748b', width: 40 },
+} as const;
+
+const categoryIcons: Record<string, string> = {
+  core: 'code',
+  frontend: 'layout',
+  backend: 'server',
+  databases: 'database',
+  cloud: 'cloud',
+  mobile: 'smartphone',
+  testing: 'check',
+  ai: 'sparkles',
+  tools: 'wrench',
+};
+
+const categoryLabels: Record<string, { es: string; en: string }> = {
+  core: { es: 'Lenguajes Core', en: 'Core Languages' },
+  frontend: { es: 'Frontend', en: 'Frontend' },
+  backend: { es: 'Backend', en: 'Backend' },
+  databases: { es: 'Bases de Datos', en: 'Databases' },
+  cloud: { es: 'Cloud & DevOps', en: 'Cloud & DevOps' },
+  mobile: { es: 'Desarrollo Móvil', en: 'Mobile Development' },
+  testing: { es: 'Testing & Calidad', en: 'Testing & Quality' },
+  ai: { es: 'IA & Automatización', en: 'AI & Automation' },
+  tools: { es: 'Herramientas & Flujo', en: 'Tools & Workflow' },
+};
+---
+
+<section id="skills" class="section">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionHeading title={tr('skills.title')} subtitle={tr('skills.subtitle')} eyebrow="02" />
+
+    <!-- Hero Stats Bar -->
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4" data-reveal>
+      {[
+        { label: { es: 'Tecnologías', en: 'Technologies' }, value: skillGroups.reduce((a, g) => a + g.items.length, 0), icon: 'code' },
+        { label: { es: 'Nivel Experto', en: 'Expert Level' }, value: skillGroups.flatMap(g => g.items).filter(i => i.level === 'expert').length, icon: 'star' },
+        { label: { es: 'Años Exp.', en: 'Yrs Exp.' }, value: '3+', icon: 'calendar' },
+        { label: { es: 'Proyectos', en: 'Projects' }, value: '8+', icon: 'layers' },
+      ].map((stat, i) => (
+        <div class="card p-5 relative overflow-hidden group" style={`--reveal-delay:${i * 80}ms`}>
+          <div class="absolute inset-0 bg-gradient-to-br from-accent/10 to-accent-2/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative flex items-center gap-3">
+            <span class="icon-badge group-hover:scale-110 transition-transform duration-300">
+              <Icon name={stat.icon} size={22} />
+            </span>
+            <div>
+              <p class="text-3xl font-bold gradient-text">{stat.value}</p>
+              <p class="text-xs text-muted">{tr(stat.label as any)}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Categories with Tech Logos -->
+    <div class="mt-16 space-y-12" data-reveal style="--reveal-delay:200ms">
+      {skillGroups.map((group, groupIndex) => (
+        <div class="group" style={`--delay:${groupIndex * 100}ms`}>
+          <!-- Category Header -->
+          <div class="flex items-center gap-4 mb-6 pb-4 border-b border-border-soft">
+            <div class="relative">
+              <span class="icon-badge relative z-10">
+                <Icon name={categoryIcons[group.titleKey.replace('skills.group.', '')] || 'code'} size={24} />
+              </span>
+              <div class="absolute -inset-2 bg-gradient-to-r from-accent/20 to-accent-2/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-text">{categoryLabels[group.titleKey.replace('skills.group.', '')]?.[lang] || tr(group.titleKey)}</h3>
+              <p class="text-sm text-muted mt-0.5">{group.items.length} {lang === 'es' ? 'tecnologías' : 'technologies'}</p>
+            </div>
+            <div class="ml-auto flex items-center gap-2 flex-wrap">
+              {['expert', 'advanced', 'intermediate', 'basic'].map(level => {
+                const count = group.items.filter(i => i.level === level).length;
+                if (!count) return null;
+                const cfg = levelConfig[level as keyof typeof levelConfig];
+                return (
+                  <span key={level} class="px-2 py-1 text-[10px] font-mono font-semibold rounded-full bg-{cfg.color}-500/15 text-{cfg.color}-400 border border-{cfg.color}-500/30"
+                        title={`${cfg.label[lang]}: ${count}`}>
+                    {count}
+                  </span>
+                );
+              })}
+            </div>
+          </div>
+
+          <!-- Tech Logos Grid -->
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+            {group.items.map((skill, skillIndex) => (
+              <div class="skill-logo-card card relative overflow-hidden p-4 transition-all duration-500 hover:border-accent/40 hover:shadow-[0_0_30px_-5px_rgb(139_92_246_/_0.3)] hover:-translate-y-1"
+                   style={`--reveal-delay:${groupIndex * 100 + skillIndex * 40}ms`}>
+                <!-- Glow background -->
+                <div class="absolute inset-0 bg-gradient-to-tr from-accent/5 via-transparent to-accent-2/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                <!-- Logo + Name -->
+                <div class="relative flex items-center gap-3">
+                  <TechLogo name={skill.name} size={48} class="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-bg-soft rounded-xl border border-border-soft group-hover:border-accent/50 group-hover:scale-110 transition-all duration-300" />
+                  <div class="min-w-0 flex-1">
+                    <h4 class="font-semibold text-text group-hover:text-accent-2 transition-colors truncate">{skill.name}</h4>
+                    <p class="text-xs text-muted">{lang === 'es' ? 'Nivel' : 'Level'}: {levelConfig[skill.level].label[lang]}</p>
+                  </div>
+                  <!-- Proficiency Ring -->
+                  <div class="relative w-12 h-12 flex-shrink-0">
+                    <svg class="w-full h-full transform -rotate-90">
+                      <circle
+                        cx="24" cy="24" r="20"
+                        fill="none"
+                        stroke="var(--color-border)"
+                        stroke-width="3"
+                      />
+                      <circle
+                        cx="24" cy="24" r="20"
+                        fill="none"
+                        stroke="url(#logo-glow-{skill.name.replace(/\s+/g, '-')}-{groupIndex})"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-dasharray="{2 * Math.PI * 20 * (levelConfig[skill.level].width / 100)} {2 * Math.PI * 20}"
+                        class="ring-progress"
+                        style="transition: stroke-dasharray 1.5s cubic-bezier(0.22, 1, 0.36, 1) {skillIndex * 80}ms;"
+                      />
+                    </svg>
+                    <defs>
+                      <linearGradient id="logo-glow-{skill.name.replace(/\s+/g, '-')}-{groupIndex}" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="var(--color-accent)" />
+                        <stop offset="100%" stop-color="var(--color-accent-2)" />
+                      </linearGradient>
+                    </defs>
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                      <span class="text-[9px] font-mono font-bold text-text">{levelConfig[skill.level].width}%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="mt-3 relative h-1.5 bg-bg-soft rounded-full overflow-hidden">
+                  <div class="h-full rounded-full bg-gradient-to-r from-accent to-accent-2 relative overflow-hidden"
+                       style="width: 0%; transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1) {skillIndex * 80}ms;"
+                       data-width="{levelConfig[skill.level].width}%"></div>
+                  <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
+                </div>
+
+                <!-- Hover Details -->
+                <div class="mt-3 pt-3 border-t border-border-soft opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-1 group-hover:translate-y-0">
+                  <div class="flex flex-wrap gap-1.5">
+                    {[
+                      { label: lang === 'es' ? 'Nivel' : 'Level', value: levelConfig[skill.level].label[lang] },
+                      { label: lang === 'es' ? 'Categoría' : 'Category', value: categoryLabels[group.titleKey.replace('skills.group.', '')]?.[lang] || tr(group.titleKey) },
+                    ].map(detail => (
+                      <span key={detail.label} class="px-2 py-1 text-[10px] font-mono bg-bg-soft rounded border border-border-soft text-muted">
+                        {detail.label}: {detail.value}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Legend -->
+    <div class="mt-16" data-reveal style="--reveal-delay:400ms">
+      <div class="card p-6">
+        <h4 class="font-semibold text-text mb-4 flex items-center gap-2">
+          <Icon name="info" size={18} class="text-accent-2" />
+          {lang === 'es' ? 'Leyenda de Niveles' : 'Proficiency Legend'}
+        </h4>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {['expert', 'advanced', 'intermediate', 'basic'].map(level => {
+            const cfg = levelConfig[level as keyof typeof levelConfig];
+            return (
+              <div class="flex items-center gap-3 p-3 rounded-xl bg-bg-soft border border-border-soft hover:border-accent/30 transition-colors">
+                <div class="w-3 h-3 rounded-full bg-{cfg.color}-500 relative">
+                  <div class="absolute inset-0 rounded-full bg-{cfg.color}-500 blur opacity-50" style="transform: scale(2);"></div>
+                </div>
+                <div>
+                  <p class="font-semibold text-text text-sm">{cfg.label[lang]}</p>
+                  <p class="text-xs text-muted">{lang === 'es' ? 'Dominio completo, arquitectura, optimización' : 'Full mastery, architecture, optimization'}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    .animate-shimmer { animation: shimmer 2s infinite; }
+    .ring-progress { transition: stroke-dasharray 1.5s cubic-bezier(0.22, 1, 0.36, 1); }
+    .skill-logo-card:hover .ring-progress { filter: drop-shadow(0 0 8px var(--color-accent)); }
+  </style>
+
+  <script>
+    // Animate progress bars on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const bars = entry.target.querySelectorAll('[data-width]');
+          bars.forEach((bar, i) => {
+            setTimeout(() => {
+              bar.style.width = bar.getAttribute('data-width') || '0%';
+            }, i * 60);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
+
+    document.querySelectorAll('.skill-logo-card').forEach(card => observer.observe(card));
+
+    // Animate rings
+    const ringObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const rings = entry.target.querySelectorAll('.ring-progress');
+          rings.forEach((ring, i) => {
+            setTimeout(() => {
+              ring.style.strokeDasharray = ring.style.strokeDasharray;
+            }, i * 60);
+          });
+          ringObserver.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
+
+    document.querySelectorAll('[id="skills"]').forEach(el => ringObserver.observe(el));
+  </script>
+</section>

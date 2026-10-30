@@ -30,7 +30,7 @@ const personSchema = {
   email: `mailto:${profile.email}`,
   url: base,
   image: `${base}${profile.photo}`,
-  sameAs: [profile.social.github, profile.social.linkedin, profile.social.twitter].filter(Boolean),
+  sameAs: [profile.social.github, profile.social.linkedin, profile.social.whatsapp].filter(Boolean),
   knowsLanguage: lang === 'es' ? ['es', 'en'] : ['en', 'es'],
 };
 ---
