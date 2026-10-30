@@ -8,8 +8,8 @@ import tailwindcss from '@tailwindcss/vite';
 // - Si tu repo es TU_USUARIO.github.io → base: '/', site: 'https://TU_USUARIO.github.io'
 // - Si tu repo es TU_USUARIO/NOMBRE_REPO → base: '/NOMBRE_REPO/', site: 'https://TU_USUARIO.github.io/NOMBRE_REPO'
 export default defineConfig({
-  site: 'https://TU_USUARIO.github.io',
-  base: '/',
+  site: 'https://payan3521.github.io',
+  base: '/portafolio/',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
