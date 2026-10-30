@@ -43,7 +43,7 @@ export const profile = {
     en: 'Open to remote, on-site or hybrid work (from 2026)',
   } satisfies Localized,
 
-  photo: '/images/profile.svg',
+  photo: '/images/profile.jpeg',
 
   /** CV en PDF (colócalos en /public/cv/) */
   resume: {

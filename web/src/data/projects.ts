@@ -12,6 +12,7 @@ export interface Project {
   repo?: string;
   demo?: string;
   featured?: boolean;
+  status?: Localized;
 }
 
 export const projects: Project[] = [
@@ -89,8 +90,12 @@ export const projects: Project[] = [
   {
     title: 'Branding Toolkit',
     description: {
-      es: 'Herramienta para generación automatizada de brand guidelines, paletas de colores, tipografía y assets de marca. En desarrollo.',
-      en: 'Automated tool for generating brand guidelines, color palettes, typography, and brand assets. In development.',
+      es: 'Herramienta para generación automatizada de brand guidelines, paletas de colores, tipografía y assets de marca. En fase activa de desarrollo; disponible la próxima semana.',
+      en: 'Automated tool for generating brand guidelines, color palettes, typography, and brand assets. In active development; launching next week.',
+    },
+    status: {
+      es: 'En desarrollo · Próxima semana',
+      en: 'In Development · Next week',
     },
     image: '/images/projects/branding-toolkit.svg',
     icon: 'sparkles',
@@ -100,8 +105,12 @@ export const projects: Project[] = [
   {
     title: 'Destino Salento',
     description: {
-      es: 'Plataforma de turismo y experiencias para Salento, Quindío. En fase inicial.',
-      en: 'Tourism and experience platform for Salento, Quindío. Early stage.',
+      es: 'Plataforma de turismo y experiencias para Salento, Quindío. En fase activa de desarrollo; disponible la próxima semana.',
+      en: 'Tourism and experience platform for Salento, Quindío. In active development; launching next week.',
+    },
+    status: {
+      es: 'En desarrollo · Próxima semana',
+      en: 'In Development · Next week',
     },
     image: '/images/projects/destino-salento.svg',
     icon: 'map-pin',
