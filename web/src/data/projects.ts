@@ -81,7 +81,7 @@ export const projects: Project[] = [
       es: 'Plataforma para el rescate y la adopción de mascotas, desarrollada en el Laboratorio de Innovación de la EAM. Su despliegue anterior fue reemplazado por el de Prospectiva 2050.',
       en: 'Pet rescue and adoption platform, built at Universidad EAM\'s Innovation Lab. Its previous deployment was replaced by the one for Prospectiva 2050.',
     },
-    image: '/images/projects/sos-pets.png',
+    image: '/images/projects/sos-pets.svg',
     icon: 'heart',
     tags: ['React', 'Node.js', 'PostgreSQL'],
     repo: 'https://github.com/Innovacion-EAM/sos-pets',

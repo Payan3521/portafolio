@@ -1,0 +1,310 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c101a"/>
+      <stop offset="50%" stop-color="#141a29"/>
+      <stop offset="100%" stop-color="#0a0e17"/>
+    </linearGradient>
+
+    <linearGradient id="accent-pets" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+
+    <linearGradient id="card-surface" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e2638" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#161c2b" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <linearGradient id="card-inner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#28334a"/>
+      <stop offset="100%" stop-color="#1b2233"/>
+    </linearGradient>
+
+    <linearGradient id="green-tag" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+
+    <linearGradient id="purple-tag" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+
+    <radialGradient id="glow-orange" cx="20%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0c101a" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glow-cyan" cx="80%" cy="70%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0c101a" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="drop-shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1200" height="675" fill="url(#bg-grad)"/>
+  <rect width="1200" height="675" fill="url(#glow-orange)"/>
+  <rect width="1200" height="675" fill="url(#glow-cyan)"/>
+
+  <!-- Subtle Grid -->
+  <g opacity="0.04" stroke="#ffffff" stroke-width="1">
+    <path d="M0 75H1200M0 150H1200M0 225H1200M0 300H1200M0 375H1200M0 450H1200M0 525H1200M0 600H1200"/>
+    <path d="M100 0V675M200 0V675M300 0V675M400 0V675M500 0V675M600 0V675M700 0V675M800 0V675M900 0V675M1000 0V675M1100 0V675"/>
+  </g>
+
+  <!-- Top App Bar Mockup -->
+  <g transform="translate(60, 40)" filter="url(#drop-shadow)">
+    <rect width="1080" height="68" rx="18" fill="url(#card-surface)" stroke="#2b354c" stroke-width="1"/>
+
+    <!-- App Logo & Name -->
+    <g transform="translate(24, 15)">
+      <!-- Paw Icon Badge -->
+      <rect width="38" height="38" rx="10" fill="url(#accent-pets)"/>
+      <g transform="translate(7, 7) scale(0.13)" fill="#ffffff">
+        <ellipse cx="104.05" cy="72.35" rx="20.48" ry="28.36"/>
+        <ellipse cx="154.99" cy="73.25" rx="20.48" ry="28.33"/>
+        <ellipse cx="62.20" cy="114.64" rx="20.45" ry="28.29"/>
+        <ellipse cx="196.86" cy="115.54" rx="20.44" ry="28.27"/>
+        <path d="M70 168c10-25 35-55 58-58 23 3 48 33 58 58 8 20-10 47-38 46-12 0-14-6-20-6s-8 6-20 6c-28 1-46-26-38-46z"/>
+      </g>
+      <text x="50" y="26" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#ffffff" letter-spacing="-0.5">SOS<tspan fill="#f97316">PETS</tspan></text>
+      <text x="145" y="25" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#64748b" letter-spacing="1">ARMENIA · QUINDÍO</text>
+    </g>
+
+    <!-- Category Pills -->
+    <g transform="translate(420, 18)">
+      <rect width="84" height="32" rx="16" fill="#f97316"/>
+      <text x="42" y="21" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Todos (142)</text>
+
+      <g transform="translate(94, 0)">
+        <rect width="84" height="32" rx="16" fill="#252f44" stroke="#334155" stroke-width="1"/>
+        <text x="42" y="21" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#94a3b8" text-anchor="middle">🐶 Perros</text>
+      </g>
+
+      <g transform="translate(188, 0)">
+        <rect width="84" height="32" rx="16" fill="#252f44" stroke="#334155" stroke-width="1"/>
+        <text x="42" y="21" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#94a3b8" text-anchor="middle">🐱 Gatos</text>
+      </g>
+
+      <g transform="translate(282, 0)">
+        <rect width="96" height="32" rx="16" fill="#dc2626" fill-opacity="0.2" stroke="#dc2626" stroke-width="1"/>
+        <text x="48" y="21" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#f87171" text-anchor="middle">🚨 Urgentes</text>
+      </g>
+    </g>
+
+    <!-- Search Input -->
+    <g transform="translate(860, 16)">
+      <rect width="196" height="36" rx="10" fill="#151b27" stroke="#334155" stroke-width="1"/>
+      <text x="36" y="23" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Buscar mascota o raza…</text>
+      <!-- Search icon -->
+      <circle cx="20" cy="18" r="5" stroke="#64748b" stroke-width="1.8" fill="none"/>
+      <line x1="24" y1="22" x2="28" y2="26" stroke="#64748b" stroke-width="1.8" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Left Main Feature Card: Pet Spotlight (Adoptable) -->
+  <g transform="translate(60, 135)" filter="url(#drop-shadow)">
+    <rect width="480" height="490" rx="24" fill="url(#card-surface)" stroke="#2b354c" stroke-width="1"/>
+
+    <!-- Pet Image Showcase Header -->
+    <g transform="translate(18, 18)">
+      <rect width="444" height="260" rx="18" fill="url(#card-inner)"/>
+
+      <!-- Dog Graphic Art / Illustration -->
+      <g transform="translate(222, 130)">
+        <!-- Decorative Glow -->
+        <circle cx="0" cy="0" r="90" fill="#f97316" fill-opacity="0.15"/>
+        <circle cx="0" cy="0" r="72" fill="#1e293b"/>
+
+        <!-- Dog Face Art -->
+        <!-- Ears -->
+        <path d="M-45 -35 C-70 -20 -65 25 -42 15 Z" fill="#d97706"/>
+        <path d="M45 -35 C70 -20 65 25 42 15 Z" fill="#d97706"/>
+        <!-- Face base -->
+        <ellipse cx="0" cy="0" rx="46" ry="42" fill="#fef3c7"/>
+        <!-- Snout -->
+        <ellipse cx="0" cy="14" rx="26" ry="20" fill="#ffffff"/>
+        <path d="M-10 6 C-10 0 10 0 10 6 C10 13 0 16 0 16 C0 16 -10 13 -10 6 Z" fill="#1f2937"/>
+        <line x1="0" y1="16" x2="0" y2="24" stroke="#1f2937" stroke-width="2"/>
+        <path d="M-8 24 Q0 29 8 24" stroke="#1f2937" stroke-width="2" fill="none"/>
+        <!-- Eyes -->
+        <circle cx="-16" cy="-8" r="5" fill="#1f2937"/>
+        <circle cx="16" cy="-8" r="5" fill="#1f2937"/>
+        <circle cx="-14.5" cy="-9.5" r="1.8" fill="#ffffff"/>
+        <circle cx="17.5" cy="-9.5" r="1.8" fill="#ffffff"/>
+        <!-- Eyebrows -->
+        <ellipse cx="-16" cy="-18" rx="5" ry="2.5" fill="#d97706"/>
+        <ellipse cx="16" cy="-18" rx="5" ry="2.5" fill="#d97706"/>
+      </g>
+
+      <!-- Status Badges on Image -->
+      <g transform="translate(16, 16)">
+        <rect width="105" height="28" rx="8" fill="url(#green-tag)"/>
+        <text x="52" y="19" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">EN ADOPCIÓN</text>
+      </g>
+
+      <g transform="translate(340, 16)">
+        <rect width="88" height="28" rx="8" fill="#0f172a" fill-opacity="0.8" stroke="#334155" stroke-width="1"/>
+        <text x="44" y="19" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#cbd5e1" text-anchor="middle">📍 Calarcá</text>
+      </g>
+    </g>
+
+    <!-- Pet Details Section -->
+    <g transform="translate(24, 305)">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <div>
+            <h3 style="margin:0; font-size:24px; font-weight:800; color:#ffffff; font-family:system-ui,sans-serif;">Max &amp; Luna</h3>
+            <p style="margin:4px 0 0 0; font-size:13px; color:#94a3b8; font-family:system-ui,sans-serif;">Mestizo · 1 año · Tamaño mediano · Esterilizado</p>
+          </div>
+        </div>
+      </div>
+      <text x="0" y="24" font-family="system-ui, sans-serif" font-size="24" font-weight="800" fill="#ffffff">Max</text>
+      <text x="58" y="24" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#f97316">(Mestizo Noble)</text>
+      <text x="0" y="48" font-family="system-ui, sans-serif" font-size="13" fill="#94a3b8">1 año · Macho · Vacunado, desparasitado y esterilizado</text>
+
+      <!-- Attributes tags -->
+      <g transform="translate(0, 70)">
+        <rect width="84" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="42" y="18" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#e2e8f0" text-anchor="middle">Juguetón</text>
+
+        <g transform="translate(92, 0)">
+          <rect width="96" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+          <text x="48" y="18" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#e2e8f0" text-anchor="middle">Apto niños</text>
+        </g>
+
+        <g transform="translate(196, 0)">
+          <rect width="112" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+          <text x="56" y="18" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#e2e8f0" text-anchor="middle">Convive c/ gatos</text>
+        </g>
+      </g>
+
+      <!-- Action Button -->
+      <g transform="translate(0, 118)">
+        <rect width="432" height="46" rx="12" fill="url(#accent-pets)"/>
+        <text x="216" y="29" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#0f172a" text-anchor="middle">SOLICITAR ADOPCIÓN RESPONSABLE →</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Right Side: Secondary Cards & Live Impact Stats -->
+  <!-- Second Pet Card: Cat (Found / Rescued) -->
+  <g transform="translate(570, 135)" filter="url(#soft-shadow)">
+    <rect width="570" height="185" rx="20" fill="url(#card-surface)" stroke="#2b354c" stroke-width="1"/>
+
+    <!-- Cat Avatar Thumbnail -->
+    <g transform="translate(18, 18)">
+      <rect width="149" height="149" rx="14" fill="url(#card-inner)"/>
+      <g transform="translate(74, 75)">
+        <circle cx="0" cy="0" r="42" fill="#8b5cf6" fill-opacity="0.2"/>
+        <!-- Cat Face -->
+        <!-- Ears -->
+        <polygon points="-30,-10 -20,-45 -2,-20" fill="#cbd5e1"/>
+        <polygon points="30,-10 20,-45 2,-20" fill="#cbd5e1"/>
+        <polygon points="-26,-15 -19,-38 -6,-22" fill="#f43f5e" fill-opacity="0.4"/>
+        <polygon points="26,-15 19,-38 6,-22" fill="#f43f5e" fill-opacity="0.4"/>
+        <!-- Head -->
+        <ellipse cx="0" cy="0" rx="36" ry="30" fill="#e2e8f0"/>
+        <!-- Eyes -->
+        <ellipse cx="-13" cy="-3" rx="5" ry="7" fill="#10b981"/>
+        <ellipse cx="13" cy="-3" rx="5" ry="7" fill="#10b981"/>
+        <ellipse cx="-13" cy="-3" rx="1.5" ry="6" fill="#0f172a"/>
+        <ellipse cx="13" cy="-3" rx="1.5" ry="6" fill="#0f172a"/>
+        <!-- Nose & Whiskers -->
+        <polygon points="0,7 -3,3 3,3" fill="#f43f5e"/>
+        <path d="M-5 12 Q0 15 5 12" stroke="#475569" stroke-width="1.5" fill="none"/>
+        <line x1="-35" y1="5" x2="-10" y2="8" stroke="#94a3b8" stroke-width="1.2"/>
+        <line x1="-35" y1="12" x2="-10" y2="12" stroke="#94a3b8" stroke-width="1.2"/>
+        <line x1="35" y1="5" x2="10" y2="8" stroke="#94a3b8" stroke-width="1.2"/>
+        <line x1="35" y1="12" x2="10" y2="12" stroke="#94a3b8" stroke-width="1.2"/>
+      </g>
+    </g>
+
+    <!-- Info -->
+    <g transform="translate(185, 28)">
+      <rect width="92" height="22" rx="6" fill="url(#purple-tag)"/>
+      <text x="46" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">ENCONTRADO</text>
+
+      <text x="0" y="52" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#ffffff">Milo</text>
+      <text x="0" y="74" font-family="system-ui, sans-serif" font-size="12" fill="#94a3b8">Gatito siamés de ~6 meses rescatado en el norte de Armenia.</text>
+      <text x="0" y="94" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#38bdf8">📍 Barrio Los Profesionales · Hace 2 días</text>
+
+      <g transform="translate(0, 110)">
+        <rect width="140" height="32" rx="8" fill="#252f44" stroke="#3b82f6" stroke-width="1"/>
+        <text x="70" y="21" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#60a5fa" text-anchor="middle">Ver ficha y reporte</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Impact & Platform Metrics Card -->
+  <g transform="translate(570, 340)" filter="url(#soft-shadow)">
+    <rect width="570" height="150" rx="20" fill="url(#card-surface)" stroke="#2b354c" stroke-width="1"/>
+
+    <g transform="translate(30, 24)">
+      <text x="0" y="18" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#f97316" letter-spacing="1">IMPACTO EN EL QUINDÍO · LAB INNOVACIÓN EAM</text>
+
+      <!-- Stat 1 -->
+      <g transform="translate(0, 42)">
+        <text x="0" y="32" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff">+180</text>
+        <text x="0" y="52" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#94a3b8">Mascotas publicadas</text>
+      </g>
+
+      <!-- Stat 2 -->
+      <g transform="translate(180, 42)">
+        <text x="0" y="32" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#10b981">94%</text>
+        <text x="0" y="52" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#94a3b8">Tasa de adopción</text>
+      </g>
+
+      <!-- Stat 3 -->
+      <g transform="translate(340, 42)">
+        <text x="0" y="32" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#38bdf8">&lt; 48h</text>
+        <text x="0" y="52" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#94a3b8">Tiempo de reencuentro</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Bottom Tech Stack Banner -->
+  <g transform="translate(570, 510)" filter="url(#soft-shadow)">
+    <rect width="570" height="115" rx="18" fill="url(#card-surface)" stroke="#2b354c" stroke-width="1"/>
+
+    <g transform="translate(24, 20)">
+      <text x="0" y="16" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#94a3b8" letter-spacing="1">ARQUITECTURA &amp; STACK TECNOLÓGICO</text>
+
+      <g transform="translate(0, 36)">
+        <!-- Tech Chips -->
+        <rect width="78" height="28" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="39" y="19" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#61dafb" text-anchor="middle">React</text>
+
+        <g transform="translate(86, 0)">
+          <rect width="84" height="28" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+          <text x="42" y="19" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#38bdf8" text-anchor="middle">Next.js</text>
+        </g>
+
+        <g transform="translate(178, 0)">
+          <rect width="84" height="28" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+          <text x="42" y="19" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#22c55e" text-anchor="middle">Node.js</text>
+        </g>
+
+        <g transform="translate(270, 0)">
+          <rect width="102" height="28" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+          <text x="51" y="19" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#60a5fa" text-anchor="middle">PostgreSQL</text>
+        </g>
+
+        <g transform="translate(380, 0)">
+          <rect width="134" height="28" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+          <text x="67" y="19" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#fbbf24" text-anchor="middle">Cloudinary Storage</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
