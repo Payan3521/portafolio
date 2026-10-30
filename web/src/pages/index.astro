@@ -1,8 +1,10 @@
 ---
 // web/src/pages/index.astro
-const base = import.meta.env.BASE_URL;
-const esUrl = `${base}es/`;
-const enUrl = `${base}en/`;
+import { profile } from '../data/profile';
+
+const site = profile.site.replace(/\/$/, '');
+const esUrl = `${site}/es/`;
+const enUrl = `${site}/en/`;
 ---
 
 <!doctype html>
@@ -18,15 +20,16 @@ const enUrl = `${base}en/`;
     <link rel="alternate" hreflang="x-default" href={esUrl} />
     <style>
       body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #080810; color: #99a2bd; font-family: system-ui, sans-serif; }
-      a { color: #22d3ee; }
+      a { color: #22d3ee; text-decoration: none; }
+      a:hover { text-decoration: underline; }
     </style>
   </head>
   <body>
     <p>Redirigiendo… <a href={esUrl}>Español</a> · <a href={enUrl}>English</a></p>
-    <script is:inline define:vars={{ base }}>
+    <script is:inline define:vars={{ esUrl, enUrl }}>
       (function () {
         var lang = (navigator.language || 'es').toLowerCase();
-        var target = lang.indexOf('en') === 0 ? base + 'en/' : base + 'es/';
+        var target = lang.indexOf('en') === 0 ? enUrl : esUrl;
         window.location.replace(target);
       })();
     </script>
