@@ -29,7 +29,7 @@ const cvData = {
 
     bio: [
       'Estudiante de Ingeniería de Software en la Universidad EAM (Armenia, Quindío), cursando 7.º de 8 semestres. Inicié la carrera en febrero de 2024 y previamente obtuve el título de Técnico en Análisis y Desarrollo de Software por el SENA (media técnica). Apasionado por construir productos de software completos: desde el modelado relacional y la arquitectura del servidor hasta interfaces de usuario reactivas, accesibles y optimizadas.',
-      'Me desempeño como Desarrollador Full Stack con dominio en TypeScript, NestJS, React, Next.js, bases de datos SQL/NoSQL, contenedores (Docker), despliegue en la nube (AWS EC2, S3), CI/CD con GitHub Actions y seguridad. Destaco por liderazgo técnico, aprendizaje autodidacta ágil, documentación exhaustiva y aplicación estratégica de Inteligencia Artificial para acelerar el desarrollo.',
+      'Me desempeño como Desarrollador Full Stack con dominio en TypeScript, NestJS, React, Next.js, bases de datos SQL/NoSQL, contenedores (Docker), despliegue en la nube (AWS EC2, S3), CI/CD con GitHub Actions y seguridad. Destaco por liderazgo técnico, aprendizaje autodidacta ágil, documentación exhaustiva y aplicación estratégica de Inteligencia Artificial para potenciar soluciones de alto impacto y optimizar flujos de desarrollo.',
     ],
 
     experience: [
@@ -170,7 +170,7 @@ const cvData = {
 
     bio: [
       'Software Engineering student at Universidad EAM (Armenia, Colombia), currently in 7th of 8 semesters. Started in February 2024 and previously earned a Technical Degree in Software Analysis and Development from SENA. Passionate about engineering complete software products: from database design and server architecture to reactive, high-performance user interfaces.',
-      'Experienced Full Stack Developer proficient in TypeScript, NestJS, React, Next.js, relational/non-relational databases, containerization (Docker), cloud deployment (AWS EC2, S3), CI/CD pipelines with GitHub Actions, and system security. Known for strong technical leadership, rapid self-learning, thorough documentation, and effective use of AI tools to accelerate delivery.',
+      'Experienced Full Stack Developer proficient in TypeScript, NestJS, React, Next.js, relational/non-relational databases, containerization (Docker), cloud deployment (AWS EC2, S3), CI/CD pipelines with GitHub Actions, and system security. Known for strong technical leadership, rapid self-learning, thorough documentation, and strategic use of Artificial Intelligence to build high-impact solutions and optimize engineering workflows.',
     ],
 
     experience: [

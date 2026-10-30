@@ -17,8 +17,8 @@ export const profile = {
   } satisfies Localized,
 
   tagline: {
-    es: 'Construyo aplicaciones web escalables con código limpio, arquitectura sólida y una obsesión por documentar y automatizar. Lidero, aprendo solo y uso IA para ir más rápido.',
-    en: 'I build scalable web apps with clean code, solid architecture, and an obsession for documentation and automation. I lead, self-learn, and leverage AI to move faster.',
+    es: 'Construyo aplicaciones web escalables con código limpio, arquitectura sólida y una cultura de documentación y automatización. Lidero, aprendo de forma continua e integro IA para potenciar soluciones de alto impacto.',
+    en: 'I build scalable web apps with clean code, solid architecture, and a strong culture of documentation and automation. I lead, continuously learn, and leverage AI to build high-impact solutions.',
   } satisfies Localized,
 
   /** Cada elemento es un párrafo. */
@@ -28,8 +28,8 @@ export const profile = {
       en: 'Software Engineering student at Universidad EAM (Armenia, Quindío), currently in 7th of 8 semesters. Started in February 2024, previously earned a Technical Degree in Software Analysis and Development from SENA (high school technical program). I love building complete products: from database and server logic to interface and user experience.',
     },
     {
-      es: 'Me desempeño como Full Stack: backend, frontend, móvil, cloud (AWS), DevOps, seguridad e integración de IA. Mis fortalezas: liderazgo técnico, comunicación clara, aprendizaje autodidacta rápido, uso avanzado de IA, visión de futuro, documentación exhaustiva y orden. Inglés A2 avanzado (lectura/escritura). Busco oportunidades actualmente.',
-      en: 'I work as a Full Stack developer: backend, frontend, mobile, cloud (AWS), DevOps, security, and AI integration. Strengths: technical leadership, clear communication, fast self-learning, advanced AI usage, future vision, thorough documentation, and organization. English A2 advanced (reading/writing). Seeking opportunities from 2026 onward.',
+      es: 'Me desempeño como Full Stack: backend, frontend, móvil, cloud (AWS), DevOps, seguridad e integración estratégica de IA. Mis fortalezas: liderazgo técnico, comunicación clara, aprendizaje autodidacta ágil, visión de futuro, documentación exhaustiva y orden. Inglés A2 avanzado (lectura/escritura). Busco oportunidades actualmente.',
+      en: 'I work as a Full Stack developer: backend, frontend, mobile, cloud (AWS), DevOps, security, and strategic AI integration. Strengths: technical leadership, clear communication, agile self-learning, future vision, thorough documentation, and organization. English A2 advanced (reading/writing). Open to opportunities.',
     },
   ] satisfies Localized[],
 
