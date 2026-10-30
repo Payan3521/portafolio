@@ -9,7 +9,7 @@ import tailwindcss from '@tailwindcss/vite';
 // - Si tu repo es TU_USUARIO/NOMBRE_REPO → base: '/NOMBRE_REPO/', site: 'https://TU_USUARIO.github.io/NOMBRE_REPO'
 export default defineConfig({
   site: 'https://payan3521.github.io',
-  base: '/portafolio/',
+  base: '/portafolio/es/',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
