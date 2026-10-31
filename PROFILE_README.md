@@ -30,26 +30,18 @@
 
 ### 💫 About Me
 
-```yaml
-name: Juan Pablo Bedoya Payán
-role: Full Stack Software Developer
-education:
-  - B.S. in Software Engineering (7th semester) @ Universidad EAM
-  - Technical Degree in Software Analysis and Development @ SENA
-location: Armenia, Quindío, Colombia 🇨🇴
-workplace: Universidad EAM — Innovation Lab
-passions:
-  - Scalable Web Architecture & Clean Code
-  - Documentation, Testing & Automation
-  - Strategic AI Integration to empower engineering solutions
-availability: Open to remote & hybrid opportunities 🚀
-```
-
-- 🔭 **Currently working on:** Strategic software solutions at **Universidad EAM — Innovation Lab**, leading the full stack development of [Prospectiva 2050](https://horizontequindio2050.com) (NestJS + 3 React Apps + PostgreSQL + AWS EC2 + Traefik).
-- 💼 **Built & Shipped:** Corporate platform [Emdecob](https://emdecob.com) (Next.js 14 + Tailwind CSS + Technical SEO), institutional portal [eam.edu.co](https://www.eam.edu.co), [SOS Pets](https://github.com/Innovacion-EAM/sos-pets), and business automations for external clients ([ESSeguros](https://github.com/Innovacion-EAM/esseguros-automatizacion)).
-- 💡 **Philosophy:** I build scalable web applications with clean code, solid architecture, and a strong culture of documentation and automation. I lead, continuously self-learn, and strategically leverage AI to build high-impact, robust solutions.
-- 💬 **Ask me about:** TypeScript, NestJS, React, Next.js, Docker, AWS (EC2/S3), PostgreSQL, Traefik, Monorepos, and Web Performance.
-- 📫 **How to reach me:** [pablobedoya3521@gmail.com](mailto:pablobedoya3521@gmail.com) or via [LinkedIn](https://www.linkedin.com/in/juan-pablo-bedoya-payán-25aa1b427/).
+- 👨‍💻 **Role:** Full Stack Software Developer
+- 🏢 **Workplace:** Desarrollador de Software en **Universidad EAM — Laboratorio de Innovación**
+- 🎓 **Education:**
+  - Estudiante de **Ingeniería de Software (7.º semestre)** @ Universidad EAM
+  - Técnico en **Análisis y Desarrollo de Software** @ SENA (Media Técnica)
+- 📍 **Location:** Armenia, Quindío, Colombia 🇨🇴
+- 🔭 **Current Focus:** Liderando el desarrollo full stack de [Prospectiva 2050 — Horizonte Quindío](https://horizontequindio2050.com) (NestJS + 3 apps React + PostgreSQL + AWS EC2 + GHCR + Traefik).
+- 💼 **Production Projects:** [Emdecob](https://emdecob.com) (Next.js 14 + Tailwind CSS + SEO Técnico), portal institucional [eam.edu.co](https://www.eam.edu.co), [SOS Pets](https://github.com/Innovacion-EAM/sos-pets) y automatizaciones corporativas ([ESSeguros](https://github.com/Innovacion-EAM/esseguros-automatizacion)).
+- 💡 **Philosophy:** Construyo aplicaciones web escalables con código limpio, arquitectura sólida y una cultura de documentación y automatización. Lidero, aprendo de forma continua e integro IA para potenciar soluciones de alto impacto.
+- 💬 **Ask me about:** TypeScript, NestJS, React, Next.js, Docker, AWS (EC2/S3), PostgreSQL, Traefik, Monorepos y rendimiento web.
+- 🚀 **Availability:** Disponible para oportunidades de trabajo remoto e híbrido.
+- 📫 **Contact:** [pablobedoya3521@gmail.com](mailto:pablobedoya3521@gmail.com) · [LinkedIn](https://www.linkedin.com/in/juan-pablo-bedoya-payán-25aa1b427/) · [Portafolio](https://payan3521.github.io/portafolio/)
 
 ---
 
@@ -181,14 +173,6 @@ availability: Open to remote & hybrid opportunities 🚀
 
 ---
 
-### ✍️ Random Dev Quote
-
 <div align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" alt="Dev Quote" />
-</div>
-
----
-
-<div align="center">
-  <sub>Diseñado con dedicación por <strong>Juan Pablo Bedoya Payán</strong> · Portafolio: <a href="https://payan3521.github.io/portafolio/">payan3521.github.io/portafolio</a></sub>
+  <sub>Desarrollado por <strong>Juan Pablo Bedoya Payán</strong> · Portafolio oficial: <a href="https://payan3521.github.io/portafolio/">payan3521.github.io/portafolio</a></sub>
 </div>
