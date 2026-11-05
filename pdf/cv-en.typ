@@ -3,217 +3,227 @@
 //  Compile: typst compile cv-en.typ cv-en.pdf
 // ============================================================
 
-// ── Page Setup ───────────────────────────────────────────
 #set page(
-  margin: (x: 2cm, y: 1.5cm),
   paper: "a4",
-  header: [
-    #align(center)[
-      #text(size: 7.5pt, fill: gray, weight: 500)[JUAN PABLO BEDOYA PAYÁN · FULL STACK DEVELOPER · pablobedoya3521\@gmail.com · +57 301 929 8995 · Armenia, Quindío, Colombia · payan3521.github.io/portafolio]
-    ]
-  ],
+  margin: (x: 2.1cm, top: 1.5cm, bottom: 1.5cm),
   footer: [
-    #align(center)[
-      #text(size: 7pt, fill: gray)[github.com/Payan3521 · linkedin.com/in/juan-pablo-bedoya-payán · wa.me/573019298995 · payan3521.github.io/portafolio]
-    ]
-  ]
+    #set text(size: 7.5pt, fill: rgb("#94a3b8"))
+    #grid(
+      columns: (1fr, auto, 1fr),
+      align: (left, center, right),
+      [Juan Pablo Bedoya Payán],
+      context counter(page).display(),
+      [payan3521.github.io/portafolio],
+    )
+  ],
 )
 
-// ── Global Styles ────────────────────────────────────────
-#set text(font: "DejaVu Sans", size: 9.5pt)
-#set par(justify: true, spacing: 3pt, leading: 1.3em)
+#set text(font: "DejaVu Sans", size: 10pt, fill: rgb("#1e293b"))
+#set par(spacing: 5pt, leading: 1.55em)
+#show link: set text(fill: rgb("#7c3aed"))
 
-// Colors
-#let accent = rgb("#8b5cf6")
-#let accent2 = rgb("#22d3ee")
-#let dark = rgb("#0f172a")
+#let accent = rgb("#7c3aed")
+#let ink = rgb("#0f172a")
 #let muted = rgb("#64748b")
+#let line-color = rgb("#e2e8f0")
 
-// Helpers
-#let section-title(title) = {
+// ── Helpers ──────────────────────────────────────────────
+#let section(title) = block(sticky: true, {
+  v(9pt)
+  text(size: 10pt, weight: 700, fill: accent, tracking: 1.4pt)[#upper(title)]
+  v(2pt)
+  line(length: 100%, stroke: (paint: line-color, thickness: 1pt))
+  v(6pt)
+})
+
+#let entry(title, body, date: "", subtitle: none) = {
   v(4pt)
-  text(size: 11pt, weight: 700, fill: dark)[#upper(title)]
-  v(1.5pt)
-  line(length: 100%, stroke: (paint: accent, thickness: 1.8pt))
-  v(4pt)
+  block(sticky: true, {
+    grid(
+      columns: (1fr, auto),
+      column-gutter: 14pt,
+      text(size: 10.5pt, weight: 700, fill: ink)[#title],
+      text(size: 8.5pt, weight: 500, fill: muted)[#date],
+    )
+    if subtitle != none {
+      v(1.5pt)
+      text(size: 9pt, fill: muted)[#subtitle]
+    }
+    v(3pt)
+  })
+  body
+  v(5pt)
 }
 
-#let bullet-item(title, desc, date: none, location: none) = {
-  let meta = ()
-  if date != none { meta.push(date) }
-  if location != none { meta.push(location) }
-  v(1pt)
-  text(weight: 600, size: 9.5pt, fill: dark)[#title]
-  if meta.len() > 0 {
-    v(0.5pt)
-    text(size: 8pt, fill: muted)[#meta.join(" · ")]
+#let bullets(items) = {
+  for item in items {
+    grid(
+      columns: (9pt, 1fr),
+      column-gutter: 5pt,
+      text(size: 9pt, fill: accent)[•],
+      text(size: 9.5pt)[#item],
+    )
+    v(2.5pt)
   }
-  v(0.5pt)
-  pad(left: 12pt, text(fill: dark)[#desc])
-  v(2.5pt)
 }
 
 #let level-color = (
-  expert: rgb("#10b981"),
-  advanced: rgb("#3b82f6"),
-  intermediate: rgb("#f59e0b"),
+  expert: rgb("#059669"),
+  advanced: rgb("#2563eb"),
+  intermediate: rgb("#d97706"),
   basic: rgb("#64748b"),
 )
 
-#let skill-chip(name, level) = box(
-  inset: (x: 4pt, y: 1.5pt),
+#let chip(name, level) = box(
+  inset: (x: 5pt, y: 2pt),
   radius: 3pt,
-  fill: level-color.at(level).lighten(88%),
-  stroke: (paint: level-color.at(level), thickness: 0.7pt),
-  text(size: 7.5pt, weight: 500, fill: level-color.at(level))[#name]
+  fill: level-color.at(level).lighten(91%),
+  stroke: (paint: level-color.at(level).lighten(45%), thickness: 0.6pt),
+  text(size: 7.5pt, weight: 500, fill: level-color.at(level))[#name],
 )
 
 #let skill-group(title, skills) = {
-  v(2pt)
-  text(weight: 600, size: 9pt, fill: dark)[#title]
-  v(1.5pt)
   grid(
-    columns: 5,
-    column-gutter: 3pt,
-    row-gutter: 3pt,
-    ..skills.map(s => skill-chip(s.name, s.level))
+    columns: (3.6cm, 1fr),
+    column-gutter: 10pt,
+    align: (left + top, left + top),
+    text(size: 8.5pt, weight: 600, fill: ink)[#title],
+    grid(
+      columns: 4,
+      column-gutter: 4pt,
+      row-gutter: 4pt,
+      ..skills.map(s => chip(s.name, s.level)),
+    ),
   )
-  v(2pt)
+  v(3pt)
 }
 
 // ============================================================
 //  DOCUMENT
 // ============================================================
 
-// ── HEADER / NAME ────────────────────────────────────────
+// ── HEADER ───────────────────────────────────────────────
 #align(center)[
-  #v(-8pt)
-  #text(size: 26pt, weight: 800, fill: dark)[JUAN PABLO BEDOYA PAYÁN]
+  #text(size: 27pt, weight: 800, fill: ink, tracking: 0.3pt)[Juan Pablo Bedoya Payán]
+  #v(6pt)
+  #text(size: 11.5pt, weight: 500, fill: accent)[Full Stack Developer · Software Engineering Student (7th/8th semester)]
+  #v(9pt)
+  #text(size: 9pt, fill: muted)[
+    #link("mailto:pablobedoya3521@gmail.com")[pablobedoya3521\@gmail.com]  ·  +57 301 929 8995  ·  Armenia, Quindío, Colombia
+  ]
   #v(2pt)
-  #text(size: 11pt, weight: 500, fill: accent)[Full Stack Developer · Software Engineering Student (7th/8th semester)]
-  #v(2pt)
-  #text(size: 8.5pt, fill: muted)[
-    pablobedoya3521\@gmail.com · +57 301 929 8995 · Armenia, Quindío, Colombia
-    #h(4pt) · #h(4pt)
-    github.com/Payan3521 · linkedin.com/in/juan-pablo-bedoya-payán · wa.me/573019298995 · payan3521.github.io/portafolio
+  #text(size: 9pt, fill: muted)[
+    #link("https://github.com/Payan3521")[github.com/Payan3521]  ·  #link("https://www.linkedin.com/in/juan-pablo-bedoya-pay%C3%A1n-25aa1b427/")[LinkedIn]  ·  #link("https://wa.me/573019298995")[WhatsApp]  ·  #link("https://payan3521.github.io/portafolio/")[payan3521.github.io/portafolio]
   ]
 ]
 
-#v(4pt)
-#line(length: 100%, stroke: (paint: accent, thickness: 1.5pt))
 #v(10pt)
+#line(length: 100%, stroke: (paint: accent, thickness: 1.5pt))
 
 // ── PROFILE ──────────────────────────────────────────────
-#section-title("Profile")
+#section("Profile")
 
-Software Engineering student at Universidad EAM (Armenia, Quindío), currently in 7th of 8 semesters. Started in February 2024, previously earned a Technical Degree in Software Analysis and Development from SENA (high school technical program).
-
-I work as a Full Stack developer: backend, frontend, mobile, cloud (AWS), DevOps, security, and AI integration. Strengths: technical leadership, clear communication, fast self-learning, advanced AI usage, future vision, thorough documentation, and organization. English A2 advanced (reading/writing). Seeking opportunities from 2026 onward.
-
-#v(3pt)
+Software Engineering student at Universidad EAM (7th of 8 semesters) and Technical Degree in Software Analysis and Development from SENA. Full Stack developer with experience in backend, frontend, mobile, cloud (AWS), DevOps and AI integration. Strengths: technical leadership, clear communication, self-learning and documentation. English B2. Available from 2026.
 
 // ── EXPERIENCE ───────────────────────────────────────────
-#section-title("Experience")
+#section("Experience")
 
-#bullet-item(
+#entry(
   "Universidad EAM — Innovation Lab",
-  "Full stack development of university-owned products and solutions for external clients. Full lifecycle participation: architecture, backend, frontend, mobile, cloud (AWS), DevOps, CI/CD, testing, and technical documentation.",
+  [
+    Full stack development of university-owned products and solutions for external clients, across the entire lifecycle: architecture, backend, frontend, mobile, cloud (AWS), DevOps, CI/CD, testing and documentation.
+
+    #v(3pt)
+    #text(size: 9.5pt, weight: 600, fill: ink)[Key achievements]
+    #v(2pt)
+    #bullets((
+      [Led Prospectiva 2050 (monorepo NestJS + 3 React apps + PostgreSQL), deployed on AWS EC2 with CI/CD to GHCR and Traefik.],
+      [Built Emdecob: corporate site in Next.js 14 and Tailwind, with technical SEO, blog and legal pages.],
+      [Built Destino Salento, a tourism platform for Salento and the Cocora Valley, and contributed to eam.edu.co.],
+      [Automated processes for ESSeguros and integrated APIs; developed Rural Adventure and SOS Pets.],
+    ))
+
+    #v(4pt)
+    #text(size: 9.5pt, weight: 600, fill: ink)[Core stack]
+    #v(3pt)
+    #grid(
+      columns: 4,
+      column-gutter: 4pt,
+      row-gutter: 4pt,
+      chip("TypeScript", "expert"),
+      chip("NestJS", "advanced"),
+      chip("React", "expert"),
+      chip("Next.js", "advanced"),
+      chip("PostgreSQL", "advanced"),
+      chip("Docker", "expert"),
+      chip("AWS", "advanced"),
+      chip("GitHub Actions", "expert"),
+      chip("Traefik", "advanced"),
+      chip("Tailwind CSS", "expert"),
+      chip("Prisma", "advanced"),
+    )
+  ],
   date: "Mar 2025 – Present",
-  location: "Armenia, Quindío (Hybrid/Remote)"
+  subtitle: "Armenia, Quindío · Hybrid / Remote",
 )
-
-#v(2pt)
-#text(weight: 600, size: 9.5pt)[Key Achievements:]
-#v(2pt)
-
-#bullet-item("", "Led end-to-end development of Prospectiva 2050 (monorepo: NestJS backend + 3 React apps + PostgreSQL), deployed on AWS EC2 with CI/CD to GHCR and Traefik.")
-#bullet-item("", "Built Emdecob: corporate site with Next.js 14 + Tailwind, technical SEO, blog, service management and legal pages, deployed on Vercel/AWS.")
-#bullet-item("", "Built Destino Salento (tourism in Salento and the Cocora Valley) and contributed to the institutional website eam.edu.co.")
-#bullet-item("", "Process automation for ESSeguros (external client): API integrations, workflows, and deployment.")
-#bullet-item("", "Developed Rural Adventure (rural tourism in Quindío) and SOS Pets (pet adoption platform).")
-
-#v(4pt)
-#text(weight: 600, size: 9.5pt, fill: accent)[Core Stack:]
-#v(2pt)
-#grid(
-  columns: 4,
-  column-gutter: 4pt,
-  row-gutter: 4pt,
-  skill-chip("TypeScript", "expert"),
-  skill-chip("NestJS", "advanced"),
-  skill-chip("React", "expert"),
-  skill-chip("Next.js", "advanced"),
-  skill-chip("PostgreSQL", "advanced"),
-  skill-chip("Docker", "expert"),
-  skill-chip("AWS", "advanced"),
-  skill-chip("GitHub Actions", "expert"),
-  skill-chip("Traefik", "advanced"),
-  skill-chip("Tailwind CSS", "expert"),
-  skill-chip("Prisma", "advanced"),
-)
-
-#v(4pt)
 
 // ── FEATURED PROJECTS ────────────────────────────────────
-#section-title("Featured Projects")
+#section("Featured Projects")
 
-#bullet-item(
+#entry(
   "Prospectiva 2050 — Horizonte Quindío",
-  "Platform and information repository: dynamic public site (editable without rebuild), role-based backoffice, message inbox with attention states, document repository app with statistics. Monorepo: NestJS + 3 React apps + PostgreSQL, AWS EC2, CI/CD GHCR + Traefik.",
+  [Platform and information repository with a dynamic public site, role-based backoffice, message inbox and document repository. Monorepo NestJS + 3 React apps + PostgreSQL, AWS EC2, CI/CD and Traefik.],
   date: "Featured",
-  location: "horizontequindio2050.com"
+  subtitle: link("https://horizontequindio2050.com")[horizontequindio2050.com],
 )
 
-#bullet-item(
+#entry(
   "Emdecob — Corporate Website",
-  "Complete corporate site: service pages (contact center, legal, property management, debt recovery), blog with technical SEO, content management without rebuild, legal pages. Next.js 14 + TypeScript + Tailwind, Vercel/AWS.",
+  [Corporate site with service pages, technical SEO blog, content management and legal pages. Next.js 14, TypeScript and Tailwind; deployed on Vercel/AWS.],
   date: "Featured",
-  location: "emdecob.com · github.com/Payan3521/emdecob"
+  subtitle: [#link("https://emdecob.com")[emdecob.com]  ·  #link("https://github.com/Payan3521/emdecob")[github.com/Payan3521/emdecob]],
 )
 
-#bullet-item(
+#entry(
   "Destino Salento — Tourism Platform",
-  "End-to-end tourism and experience platform for Salento and the Cocora Valley: coffee tour catalog, ecological routes, bookings and local content. Next.js + TypeScript, deployed to production.",
+  [Tourism and experience platform for Salento and the Cocora Valley: coffee tours, ecological routes, bookings and local content. Next.js and TypeScript, deployed to production.],
   date: "Featured",
-  location: "destinosalento.com · github.com/Innovacion-EAM/destino-salento-v2"
+  subtitle: [#link("https://destinosalento.com")[destinosalento.com]  ·  #link("https://github.com/Innovacion-EAM/destino-salento-v2")[github.com/Innovacion-EAM/destino-salento-v2]],
 )
 
-#bullet-item(
+#entry(
   "Universidad EAM Web Platform",
-  "Institutional website: academic programs, admissions, news. Development and implementation as part of the Innovation Lab team.",
+  [Institutional website with academic programs, admissions and news. Development and implementation as part of the Innovation Lab.],
   date: "Collaboration",
-  location: "eam.edu.co"
+  subtitle: link("https://www.eam.edu.co")[eam.edu.co],
 )
-
-#v(4pt)
 
 // ── EDUCATION ────────────────────────────────────────────
-#section-title("Education")
+#section("Education")
 
-#bullet-item(
+#entry(
   "Universidad EAM",
-  "Software Engineering — Currently in 7th of 8 semesters (started Feb 2024). Algorithms, data structures, databases, software architecture, networking, requirements engineering, agile methodologies.",
-  date: "2024 – Present"
+  [Software Engineering — 7th of 8 semesters (since February 2024). Algorithms, data structures, databases, architecture, networking and agile methodologies.],
+  date: "2024 – Present",
 )
 
-#bullet-item(
+#entry(
   "SENA — Technical High School",
-  "Technical Degree in Software Analysis and Development. Programming fundamentals, relational databases, web development (HTML, CSS, JS), Scrum, Git, testing basics.",
-  date: "2022 – 2023"
+  [Technical Degree in Software Analysis and Development. Programming, relational databases, web development, Scrum, Git and testing fundamentals.],
+  date: "2022 – 2023",
 )
-
-#v(4pt)
 
 // ── TECHNICAL SKILLS ─────────────────────────────────────
-#section-title("Technical Skills")
+#section("Technical Skills")
 
-#skill-group("Core Languages", (
+#skill-group("Languages", (
   (name: "TypeScript", level: "expert"),
   (name: "JavaScript", level: "expert"),
   (name: "Python", level: "advanced"),
   (name: "SQL", level: "advanced"),
   (name: "Go", level: "intermediate"),
   (name: "Java", level: "intermediate"),
+  (name: "Kotlin", level: "advanced"),
 ))
 
 #skill-group("Frontend", (
@@ -225,9 +235,10 @@ I work as a Full Stack developer: backend, frontend, mobile, cloud (AWS), DevOps
   (name: "CSS3", level: "expert"),
   (name: "Vue", level: "intermediate"),
   (name: "Angular", level: "basic"),
+  (name: "React Native", level: "intermediate"),
 ))
 
-#skill-group("Backend", (
+#skill-group("Backend & Data", (
   (name: "Node.js", level: "expert"),
   (name: "NestJS", level: "advanced"),
   (name: "Express", level: "expert"),
@@ -236,9 +247,6 @@ I work as a Full Stack developer: backend, frontend, mobile, cloud (AWS), DevOps
   (name: "API Design", level: "advanced"),
   (name: "WebSockets", level: "intermediate"),
   (name: "GraphQL", level: "intermediate"),
-))
-
-#skill-group("Databases", (
   (name: "PostgreSQL", level: "advanced"),
   (name: "Redis", level: "advanced"),
   (name: "Prisma", level: "advanced"),
@@ -256,12 +264,6 @@ I work as a Full Stack developer: backend, frontend, mobile, cloud (AWS), DevOps
   (name: "Traefik", level: "advanced"),
   (name: "Vercel", level: "advanced"),
   (name: "CI/CD", level: "expert"),
-))
-
-#skill-group("Mobile Development", (
-  (name: "Kotlin", level: "advanced"),
-  (name: "Android", level: "advanced"),
-  (name: "React Native", level: "intermediate"),
 ))
 
 #skill-group("Testing & Quality", (
@@ -282,22 +284,18 @@ I work as a Full Stack developer: backend, frontend, mobile, cloud (AWS), DevOps
   (name: "OpenCode", level: "advanced"),
 ))
 
-#skill-group("Tools & Workflow", (
+#skill-group("Tools", (
   (name: "Git", level: "expert"),
   (name: "GitHub", level: "expert"),
   (name: "Linux", level: "advanced"),
   (name: "VS Code", level: "expert"),
   (name: "Postman", level: "advanced"),
   (name: "Figma", level: "intermediate"),
+  (name: "Android", level: "advanced"),
   (name: "Tailscale", level: "intermediate"),
-  (name: "DNS Management", level: "intermediate"),
+  (name: "DNS", level: "intermediate"),
 ))
 
-#v(4pt)
-
 // ── LANGUAGES ────────────────────────────────────────────
-#section-title("Languages")
-#text(weight: 600)[Spanish:] Native · #text(weight: 600)[English:] A2 Advanced — fluent reading/writing, speaking/listening in development
-
-#v(2pt)
-#align(center)[ #text(size: 8pt, fill: gray, weight: 500)[— End of résumé —] ]
+#section("Languages")
+#text(weight: 600, fill: ink)[Spanish:] Native  ·  #text(weight: 600, fill: ink)[English:] B2 — Upper intermediate (fluent reading and writing)
