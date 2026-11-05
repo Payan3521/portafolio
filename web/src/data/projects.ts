@@ -105,16 +105,14 @@ export const projects: Project[] = [
   {
     title: 'Destino Salento',
     description: {
-      es: 'Plataforma de turismo y experiencias para Salento, Quindío. En fase activa de desarrollo; disponible la próxima semana.',
-      en: 'Tourism and experience platform for Salento, Quindío. In active development; launching next week.',
-    },
-    status: {
-      es: 'En desarrollo · Próxima semana',
-      en: 'In Development · Next week',
+      es: 'Plataforma integral de turismo y experiencias para Salento y el Valle de Cocora, Quindío: catálogo de tours cafeteros, rutas ecológicas, reservas y contenido local. Desarrollada en el Laboratorio de Innovación de la EAM y desplegada en producción.',
+      en: 'End-to-end tourism and experience platform for Salento and the Cocora Valley, Quindío: coffee tour catalog, ecological routes, bookings and local content. Built at Universidad EAM\'s Innovation Lab and deployed to production.',
     },
     image: '/images/projects/destino-salento.svg',
     icon: 'map-pin',
     tags: ['Next.js', 'Maps', 'Booking', 'TypeScript'],
-    featured: false,
+    repo: 'https://github.com/Innovacion-EAM/destino-salento-v2',
+    demo: 'https://destinosalento.com',
+    featured: true,
   },
 ];

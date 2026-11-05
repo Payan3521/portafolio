@@ -156,11 +156,16 @@
       <p align="center"><code>TypeScript</code> · <code>Canvas</code> · <code>SVG</code> · <code>Design Systems</code></p>
     </td>
     <td width="50%">
-      <h3 align="center">Destino Salento ⏳</h3>
+      <h3 align="center">Destino Salento</h3>
       <p align="center">
-        <img src="https://img.shields.io/badge/Estado-En_Desarrollo-amber?style=flat-square" alt="En desarrollo" />
+        <a href="https://destinosalento.com">
+          <img src="https://img.shields.io/badge/Sitio_Web-destinosalento.com-22d3ee?style=flat-square&logo=googlechrome&logoColor=white" alt="Sitio web" />
+        </a>
+        <a href="https://github.com/Innovacion-EAM/destino-salento-v2">
+          <img src="https://img.shields.io/badge/Repositorio-GitHub-8b5cf6?style=flat-square&logo=github" alt="Repo" />
+        </a>
       </p>
-      <p>Plataforma integral de turismo y experiencias para Salento y el Valle de Cocora: catálogo de tours cafeteros, rutas ecológicas y reservas. <em>Lanzamiento la próxima semana.</em></p>
+      <p>Plataforma integral de turismo y experiencias para Salento y el Valle de Cocora: catálogo de tours cafeteros, rutas ecológicas, reservas y contenido local. Desarrollada en el Laboratorio de Innovación de la EAM y desplegada en producción.</p>
       <p align="center"><code>Next.js</code> · <code>Maps</code> · <code>Booking</code> · <code>TypeScript</code></p>
     </td>
   </tr>
